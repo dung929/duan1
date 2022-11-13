@@ -1,5 +1,5 @@
 <?php
-require_once('../controller/db.php');
+require_once('../db.php');
 $user = $_POST['username'];
 $password = $_POST['password'];
 $errors = '';
@@ -10,7 +10,7 @@ if ($password == '') {
     $errors .= 'Password không được để trống!.';
 }
 if ($errors != '') {
-    header("location: login.php?errors=$errors");
+    header("location:../../view/login-user/login.php?errors=$errors");
 } else {
     $sql = "SELECT * FROM controller WHERE username='$user'";
     $statement = $connect->prepare($sql);
@@ -19,10 +19,10 @@ if ($errors != '') {
     if ($loginUser == false) {
         $errors = 'Người dùng không tồn tại!';
         
-        header("location: login.php?errors=$errors");
+        header("location:../../view/login-user/login.php?errors=$errors");
     } else if (password_verify($password, $loginUser['password']) ==false) {
         $errors = 'Mật khẩu không chính xác!';
-        header("location: login.php?errors=$errors");
+        header("location:../../view/login-user/login.php?errors=$errors");
     } else {
         header("location:index.php");
     }
