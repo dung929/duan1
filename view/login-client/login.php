@@ -13,7 +13,7 @@ $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
 
 <body>
     <div class="">
-        <form autocomplete="off" action="post_login.php" method="POST">
+        <form autocomplete="off" action="../../model/login-client/post_login.php" method="POST">
             <h2>Sign in</h2>
             <div class="">
                 <span>Userame</span>
