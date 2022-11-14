@@ -12,7 +12,9 @@
 <body>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="tnyc_sign_up_client.php"
+			method='POST'
+		>
 			<h1>Create Account</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -20,8 +22,8 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" />
-			<input type="password" placeholder="Password" />
+			<input type="text" placeholder="username" />
+			<input type="password" placeholder="password" />
 			<button>Sign Up</button>
 		</form>
 	</div>
