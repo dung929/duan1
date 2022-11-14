@@ -9,7 +9,7 @@ $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login User</title>
-  <link rel="stylesheet" href="./style/login.css">
+  <link rel="stylesheet" href="../style/login.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
   integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 </head>
@@ -38,7 +38,7 @@ $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>or use your account</span>
-			<input type="email" placeholder="Name" name="username" />
+			<input type="text" placeholder="Name" name="username" />
 			<input type="password" placeholder="Password" name="password" />
 			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
@@ -59,7 +59,7 @@ $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
 		</div>
 	</div>
 </div>
-<script src="./js/login.js"></script>
+<script src="../js/login.js"></script>
 <div style="color: orange   ;">
         <?php echo $errors ?>
     </div>
