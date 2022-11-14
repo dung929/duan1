@@ -30,7 +30,7 @@ $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="../../model/login-client/post_login.php">
+		<form action="../../model/login-client/post_login.php" method="POST">
 			<h1>Sign in</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
