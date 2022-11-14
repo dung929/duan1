@@ -15,6 +15,7 @@
 		<form action="tnyc_sign_up_client.php"
 			method='POST'
 		> 
+ 
 		
 			<h1>Create Account</h1>
 			<div class="social-container">
