@@ -52,11 +52,16 @@
         </div>
     </head>
     <div class="max-w-5xl mx-auto">
-        <h2 class="mt-[30px] mb-[30px] text-[25px] text-red-500 text-underline">Du lịch Hà Nội - Sapa - Bản Cát Cát - Hàm Rồng dịp Lễ 30/4 từ Hà Nội.</h2>
+    <marquee behavior="#" direction="left">
+                <p class="text-2xl font-bold text-red-500 mt-[30px] mb-[30px">
+                Du lịch Hà Nội - Sapa - Bản Cát Cát - Hàm Rồng dịp Lễ 30/4 từ Hà Nội.
+                </p>
+            </marquee>
+        
         <div class="flex items-center">
             <div><img src="./image/1.jpg" alt="" class="w-[700px] mr-[30px] rounded-2xl"></div>
             <div>
-                <img src="./image/2.jpg" alt="" class="w-[300px] mr-[30px] rounded-2xl mb-[20px]">
+                <img src="./image/2.jpg" alt="" class="w-[300px] mr-[30px] rounded-2xl mb-[40px]">
                 <img src="./image/3.jpg" alt="" class="w-[300px] mr-[30px] rounded-2xl">
             </div>
         </div>
