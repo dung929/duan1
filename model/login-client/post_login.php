@@ -1,5 +1,5 @@
 <?php
-require_once('../db.php');
+require_once('../../model/db.php');
 $user = $_POST['username'];
 $password = $_POST['password'];
 $errors = '';
@@ -18,7 +18,6 @@ if ($errors != '') {
     $loginUser = $statement->fetch();
     if ($loginUser == false) {
         $errors = 'Người dùng không tồn tại!';
-        
         header("location:../../view/login-client/login.php?errors=$errors");
     } else if (password_verify($password, $loginUser['password']) ==false) {
         $errors = 'Mật khẩu không chính xác!';
