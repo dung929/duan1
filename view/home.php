@@ -39,10 +39,10 @@
         </div>
         <div class="header-menu">
           <ul class="menu">
-            <li><a href="">home</a></li>
-            <li><a href="">travel</a></li>
-            <li><a href="">blog</a></li>
-            <li><a href="">contact</a></li>
+            <li><a href="home.php">home</a></li>
+            <li><a href="travel/travel.php">travel</a></li>
+            <li><a href="blog.php">blog</a></li>
+            <li><a href="contact.php">contact</a></li>
           </ul>
         </div>
         <div class="header-btn-left">

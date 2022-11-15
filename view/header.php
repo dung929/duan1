@@ -8,5 +8,4 @@
     <link rel="stylesheet" href="../view/style/home.css">
 </head>
 <body>
-    <h1>hêllo</h1>
-    <h2>hi</h2>
+   
