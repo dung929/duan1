@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="./style/blog.css">
-    <link rel="stylesheet" href="./style/homez.css">
+    <link rel="stylesheet" href="../view/style/blog.css">
+    <link rel="stylesheet" href="../view/style/home.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
       integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/e123c1a84c.js" crossorigin="anonymous"></script>
@@ -201,7 +201,7 @@
           </div>
         </div>
       </footer>
-      <script src="./js/home.js"></script>
+      <script src="../view/js/home.js"></script>
       <script src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 </body>
