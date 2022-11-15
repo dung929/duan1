@@ -24,6 +24,6 @@ if ($errors != '') {
         $errors = 'Mật khẩu không chính xác!';
         header("location:../../view/login-client/login.php?errors=$errors");
     } else {
-        header("location:index.php");
+        header("location:../../view/home.php");
     }
 }
