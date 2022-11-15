@@ -19,7 +19,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css"
     />
-    <link rel="stylesheet" href="homez.css" />
+    <link rel="stylesheet" href="home.css" />
   </head>
 
   <body>
@@ -35,7 +35,7 @@
       </div>
       <div class="header-nav">
         <div class="header-logo">
-          <img src="../image/06ede263059cc3c29a8d.jpg" alt="" />
+          <img src="./image/logo.png" alt="" />
         </div>
         <div class="header-menu">
           <ul class="menu">
