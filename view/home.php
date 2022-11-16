@@ -39,8 +39,11 @@
         </div>
         <div class="header-menu">
           <ul class="menu">
+            <li><a href="">home</a></li>
+            <li><a href="">travel</a></li>
             <li><a href="home.php">home</a></li>
             <li><a href="travel/travel.php">travel</a></li>
+
             <li><a href="blog.php">blog</a></li>
             <li><a href="contact.php">contact</a></li>
           </ul>
@@ -53,7 +56,7 @@
             </div>
           </div>
           <div class="header-btn-login">
-            <a href="">
+            <a href="login-client/login.php">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
