@@ -9,7 +9,7 @@
       integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/e123c1a84c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="homez.css">
+    <link rel="stylesheet" href="home.css">
 </head>
 
 
