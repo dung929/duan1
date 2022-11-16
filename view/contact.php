@@ -58,7 +58,7 @@
   <div class="container1">
 		<div class="contact-box">
 			<div class="left">
-                <img src="../image/bg.jpg" alt="">
+                <img src="../view/image/bg.jpg" alt="">
             </div>
 			<div class="right">
 				<h2>Contact Us</h2>

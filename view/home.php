@@ -41,6 +41,9 @@
           <ul class="menu">
             <li><a href="">home</a></li>
             <li><a href="">travel</a></li>
+            <li><a href="home.php">home</a></li>
+            <li><a href="travel/travel.php">travel</a></li>
+
             <li><a href="blog.php">blog</a></li>
             <li><a href="contact.php">contact</a></li>
           </ul>
