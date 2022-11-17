@@ -24,6 +24,11 @@ if ($errors != '') {
         $errors = 'Mật khẩu không chính xác!';
         header("location:../../view/login-client/login.php?errors=$errors");
     } else {
+        // Khi người dùng nhập đúng email, password
+        session_start(); // Khởi tạo session để lưu thông tin user
+        // $_SESSION là 1 biến toàn cục, kiểu mảng, lưu thông tin trong phiên làm việc
+        $_SESSION['user'] = $loginUser; // lưu user = $loginUser vào phiên làm việc
+        // Đăng nhập thành công, quay về màn login để chào
         header("location:../../view/home.php");
     }
 }

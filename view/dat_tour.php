@@ -45,7 +45,7 @@ $sum = 0;
         </form>
       </div>
       <div class="flex items-center">
-        <button><a href="" class="font-bold text-pink-500">Đăng xuất</a></button>
+        <button><a href="../model/logout.php" class="font-bold text-pink-500">Đăng xuất</a></button>
         <i class="fas fa-user ml-[5px]"></i>
       </div>
     </div>
