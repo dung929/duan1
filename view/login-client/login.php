@@ -16,7 +16,9 @@ $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
 <body>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="../../model/login-client/tnyc_sign_up_client.php"
+		method="POST"
+		>
 			<h1>Create Account</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -61,7 +63,7 @@ $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
 		</div>
 	</div>
 </div>
-<script src="./js/login.js"></script>
+<script src="../js/login.js"></script>
 <div style="color: orange   ;">
         <?php echo $errors ?>
     </div>

@@ -1,3 +1,11 @@
+<?php
+    session_start(); // Bắt đầu sử dụng session ở màn hình này
+    // var_dump($_SESSION);
+
+    // Nếu lần đầu tiên hoặc không có lỗi thì sẽ không có key errors trong $_GET
+    // /login.php?errors=...
+    $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,10 +27,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.0/assets/owl.carousel.min.css"
     />
-    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="style/home.css" />
   </head>
 
-  <body>
+  <body>  
     <div id="hero">
       <div id="mast">
         <h1>
@@ -39,13 +47,16 @@
         </div>
         <div class="header-menu">
           <ul class="menu">
-            <li><a href="">home</a></li>
-            <li><a href="">travel</a></li>
             <li><a href="home.php">home</a></li>
             <li><a href="travel/travel.php">travel</a></li>
-
             <li><a href="blog.php">blog</a></li>
             <li><a href="contact.php">contact</a></li>
+            <?php if (isset($_SESSION['user'])){ ?>
+     Chào <?= $_SESSION['user']['username'] ?> !
+              <a href="../model/logout.php">Đăng xuất</a>
+              <?php }else { ?>
+                header("location:home.php");
+<?php } ?>
           </ul>
         </div>
         <div class="header-btn-left">
