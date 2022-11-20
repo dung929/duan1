@@ -58,7 +58,7 @@
                     
                   </div>
                   <h3 class="text-red-500 hover:text-blue-500  text-[24px] font-bold">
-                    <a href="">Xem chi tiết</a>
+                    <a href="../detail_product.php">Xem chi tiết</a>
                   </h3>
                   <p class="text-[#21243D] text-[16px] font-regular md:w-[585px]">
                     Nha Trang là một thành phố ven biển và là trung tâm chính trị, kinh tế, văn hóa, khoa học kỹ thuật và du lịch của tỉnh Khánh Hòa, Việt Nam...
