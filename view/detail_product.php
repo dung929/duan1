@@ -24,7 +24,7 @@ require_once('../model/db.php');
     </div>
     <div class="grid2">
       <!--name  -->
-    <h1 style="margin-bottom: 10px;font-weight:bold; color:;">Hà Giang</h1>
+    <h1 style="margin-bottom: 10px;font-weight:bold; color:aqua;">Hà Giang</h1>
     <hr>
     <!-- price/time -->
     <h1 style="margin-bottom: 10px; color: brown; " >1.000.000đ/2 ngày</h1>
