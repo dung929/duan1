@@ -87,7 +87,11 @@
               <?php }else { ?>
                 header('location:home.php');
 <?php } ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 07d7d73c757e58a6b191a548722894a8cb8b1445
+>>>>>>> 04e5b5107f8637614e60f186a1a9cf737c5740c5
           </ul>
         </div>
         <div class="header-btn-left">
@@ -154,7 +158,11 @@
   </body>
 </html>
   
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> 04e5b5107f8637614e60f186a1a9cf737c5740c5
               <input type="text" placeholder="Search..." />
               <div class="search"></div>
             </div>
@@ -243,4 +251,8 @@
     </footer>
   </body>
 </html>
+<<<<<<< HEAD
 >>>>>>> fcdecfaad8f2b6c3c0374cee01c524b91242a7d5
+=======
+>>>>>>> 07d7d73c757e58a6b191a548722894a8cb8b1445
+>>>>>>> 04e5b5107f8637614e60f186a1a9cf737c5740c5
