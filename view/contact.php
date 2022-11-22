@@ -66,7 +66,7 @@
 				<input type="text" class="field" placeholder="Your Name">
 				<input type="text" class="field" placeholder="Your Email">
 				<input type="text" class="field" placeholder="Phone">
-				<textarea placeholder="Message" class="field"></textarea>
+				<input placeholder="Message" class="field"></input>
 				<button class="btn">Send</button>
 			</div>
 		</div>

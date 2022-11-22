@@ -18,17 +18,31 @@ if ($errors != '') {
     $loginUser = $statement->fetch();
     if ($loginUser == false) {
         $errors = 'Người dùng không tồn tại!';
-        
+
         header("location:../../view/login-client/login.php?errors=$errors");
-    } else if (password_verify($password, $loginUser['password']) ==false) {
+    } else if (password_verify($password, $loginUser['password']) == false) {
         $errors = 'Mật khẩu không chính xác!';
         header("location:../../view/login-client/login.php?errors=$errors");
     } else {
-        // Khi người dùng nhập đúng email, password
-        session_start(); // Khởi tạo session để lưu thông tin user
-        // $_SESSION là 1 biến toàn cục, kiểu mảng, lưu thông tin trong phiên làm việc
-        $_SESSION['user'] = $loginUser; // lưu user = $loginUser vào phiên làm việc
-        // Đăng nhập thành công, quay về màn login để chào
+        session_start();
+        $_SESSION['user'] = $loginUser;
         header("location:../../view/home.php");
     }
+    $sql = "SELECT * FROM controller WHERE username='$user'";
+$statement = $connect->prepare($sql);
+$statement->execute();
+$loginUser = $statement->fetch();
+if ($loginUser == false) {
+    $errors = 'Người dùng không tồn tại!';
+
+    header("location:../../view/login-client/login.php?errors=$errors");
+} else if (password_verify($password, $loginUser['password']) == false) {
+    $errors = 'Mật khẩu không chính xác!';
+    header("location:../../view/login-client/login.php?errors=$errors");
+} else {
+    session_start();
+    $_SESSION['user'] = $loginUser;
+    header("location:../../view/admin.php");
 }
+}
+
