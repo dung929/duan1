@@ -87,7 +87,7 @@
               <?php }else { ?>
                 header('location:home.php');
 <?php } ?>
->>>>>>> fcdecfaad8f2b6c3c0374cee01c524b91242a7d5
+
           </ul>
         </div>
         <div class="header-btn-left">
@@ -154,7 +154,7 @@
   </body>
 </html>
   
-=======
+
               <input type="text" placeholder="Search..." />
               <div class="search"></div>
             </div>
