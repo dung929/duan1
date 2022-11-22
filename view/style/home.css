@@ -49,10 +49,6 @@ a {
   width: 99px;
   margin-left: 90px;
   border-radius: 50%;
-<<<<<<< HEAD
-=======
-  
->>>>>>> 07d7d73c757e58a6b191a548722894a8cb8b1445
 }
 .menu {
   display: flex;
@@ -109,7 +105,10 @@ a {
 .header-btn-left {
   margin-left: 450px;
 }
-<<<<<<< HEAD
+
+
+
+
 @media only screen and (min-width: 1200px) {
   .header-btn-left {
     margin-left: 1050px;
@@ -118,7 +117,8 @@ a {
 @media only screen and (max-width: 1300px) {
   .header-btn-left {
     margin-left: 450px;
-=======
+  }
+}
 @media only screen and (max-width: 1800px) {
   .header-btn-left {
     margin-left: 450px;
@@ -127,9 +127,10 @@ a {
 @media only screen and (max-width: 1300px) {
   .header-menu{
     margin-left: 20px;
->>>>>>> 07d7d73c757e58a6b191a548722894a8cb8b1445
+
   }
 }
+
 .container {
   position: absolute;
   margin: auto;
