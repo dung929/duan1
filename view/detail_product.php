@@ -19,14 +19,14 @@ $subjects = $statement->fetchAll();
     </div>
     <div class="grid2">
       <!--name  -->
-      <h1 style="margin-bottom: 10px;font-weight:bold;">Hà Giang</h1>
-      <hr>
-      <!-- price/time -->
-      <h1 style="margin-bottom: 10px; color: brown; ">1.000.000đ/2 ngày</h1>
-      <hr>
-      <!-- content -->
-      <p style="margin-bottom: 50px; ">Hà giang là một nơi có nhiều cảnh đẹp</p>
-      <button>Đặt Tour</button>
+    <h1 style="margin-bottom: 10px;font-weight:bold;">Hà Giang</h1>
+    <hr>
+    <!-- price/time -->
+    <h1 style="margin-bottom: 10px; color: brown; " >1.000.000đ/2 ngày</h1>
+    <hr>
+    <!-- content -->
+    <p style="margin-bottom: 50px; ">Hà giang là một nơi có nhiều cảnh đẹp</p>
+    <button>Đặt Tour</button>
     </div>
   </div>
   <div class="many_img">
