@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300);
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
 * {
   box-sizing: border-box;
   padding: 0;
@@ -92,6 +90,10 @@ a {
 }
 
 /*--------------------------------------header btn search -----------------------------------*/
+.header-btn-login {
+  position: relative;
+  z-index: 1;
+}
 .header-btn-login svg {
   width: 40px;
   height: 40px;
@@ -105,32 +107,16 @@ a {
 .header-btn-left {
   margin-left: 450px;
 }
-
-
-
-
-@media only screen and (min-width: 1200px) {
-  .header-btn-left {
-    margin-left: 1050px;
-  }
-}
-@media only screen and (max-width: 1300px) {
-  .header-btn-left {
-    margin-left: 450px;
-  }
-}
 @media only screen and (max-width: 1800px) {
   .header-btn-left {
     margin-left: 450px;
   }
 }
 @media only screen and (max-width: 1300px) {
-  .header-menu{
+  .header-menu {
     margin-left: 20px;
-
   }
 }
-
 .container {
   position: absolute;
   margin: auto;
