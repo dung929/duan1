@@ -102,6 +102,8 @@ a {
   display: block;
   margin-left: 20px;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
 .header-btn-left {
