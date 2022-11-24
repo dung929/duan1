@@ -98,8 +98,8 @@ $value = $statement->fetch();
               <option value="4">4 người</option>
             </select>
             <br>
-            <h2 class="inline-block text-white font-bold mb-[20px]">Ngày đặt</h2>
-            <input type="date" name="date_dat_tour" id="" class="p-2 rounded-2xl text-center bg-white">
+            <h2 class="inline-block text-white font-bold mb-[20px]">Thời gian</h2>
+            <input type="text" name="date_dat_tour" id="" value="4 ngày 3 đêm" class="p-2 rounded-2xl text-center bg-white">
             <br>
             <h2 class="inline-block text-white font-bold mb-[20px]">Tổng tiền</h2>
             <span class="p-2 rounded-2xl text-center bg-white"><input type="text" id="sum">VNĐ</span>
