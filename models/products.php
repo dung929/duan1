@@ -11,11 +11,9 @@ function createTour(){
     $time_start = isset($_POST['time_start']) ? $_POST['time_start'] : '';
     $time_end = isset($_POST['time_end']) ? $_POST['time_end'] : '';
     $content = isset($_POST['content']) ? $_POST['content'] : '';
-    $image = isset($_POST['image']) ? $_POST['image'] : '';
-    $save_image ='model/'. basename($image['name']);
-    move_uploaded_file($image['tmp_name'], $save_image);
+    $image = isset($_FILES['image']) ? $_FILES['image'] : '';
     $sql = "INSERT INTO products  "
     . "(name, price, time_start, time_end, content,image)"
-    ." VALUES ('$name', '$price', '$time_start', '$time_end', '$content', '$save_image')";
+    ." VALUES ('$name', '$price', '$time_start', '$time_end', '$content', 'image')";
     return getData($sql, NOT_FETCH);
 } 

@@ -280,14 +280,14 @@
                                                     <select class="form-select" name="categories" aria-label="Default select example">
                                                         <option selected>Chọn danh mục</option>
                                                         <?php foreach ($categories as $key => $value) : ?>
-                                                            <option <?= $value['id'] ?>><?= $value['name'] ?></option>
+                                                            <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
                                                         <?php endforeach ?>
                                                     </select>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                                    <button type="button" class="btn btn-primary">Lưu</button>
-                                                </div>
+                                              <div class="modal-footer">
+                                                <button type="" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                            </div>
                                             </form>
                                         </div>
 
