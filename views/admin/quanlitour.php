@@ -249,7 +249,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="../../models/products.php">
+                                            <form method="POST" action="../../models/products.php" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Tên:</label>
                                                     <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
@@ -289,7 +289,6 @@
                                                     <button type="button" class="btn btn-primary">Lưu</button>
                                                 </div>
                                             </form>
-
                                         </div>
 
                                     </div>
