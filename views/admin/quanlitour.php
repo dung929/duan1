@@ -252,43 +252,44 @@
                                             <form method="POST" action="../../models/products.php" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Tên:</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Giá:</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="text" class="form-control" name="price" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Thời gian bắt đầu:</label>
-                                                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="date" class="form-control" name="time_start" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Thời gian kết thúc:</label>
-                                                    <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="date" class="form-control" name="time_end" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Nội dung:</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="text" class="form-control" name="content" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Ảnh:</label>
-                                                    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="file" class="form-control" name="image" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Danh mục:</label>
 
-                                                    <select class="form-select" aria-label="Default select example">
+                                                    <select class="form-select" name="categories" aria-label="Default select example">
                                                         <option selected>Chọn danh mục</option>
                                                         <?php foreach ($categories as $key => $value) : ?>
                                                             <option <?= $value['id'] ?>><?= $value['name'] ?></option>
                                                         <?php endforeach ?>
                                                     </select>
                                                 </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                                    <button type="button" class="btn btn-primary">Lưu</button>
-                                                </div>
+                                                <button type="submit" class="btn btn-primary">Submit</button>
                                             </form>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                                <button type="button" class="btn btn-primary">Lưu</button>
+                                            </div>
                                         </div>
 
                                     </div>
