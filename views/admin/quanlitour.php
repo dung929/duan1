@@ -249,7 +249,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="../../models/products.php">
+                                            <form method="POST" action="../../models/products.php" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Tên:</label>
                                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
@@ -284,12 +284,11 @@
                                                         <?php endforeach ?>
                                                     </select>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                                    <button type="button" class="btn btn-primary">Lưu</button>
+                                                </div>
                                             </form>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                                <button type="button" class="btn btn-primary">Lưu</button>
-                                            </div>
                                         </div>
 
                                     </div>
