@@ -15,6 +15,10 @@ switch ($url) {
         // Gọi controller TourController
         echo login();
         break;
+    case 'taotour':
+        // Gọi controller TourController
+        echo taotour();
+        break;
     case 'admin_index':
         echo index();
         break;
