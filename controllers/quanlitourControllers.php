@@ -6,8 +6,11 @@ function  quanlitour()
 {
     $products = getAllProducts();
     $categories = getAllCategories();
-    $createTour = createTour();
-
     include_once './views/admin/quanlitour.php';
+}
+function taotour(){
+    $taotour = createTour()
+;
+header("refresh:1");
 }
 

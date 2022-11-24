@@ -249,7 +249,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="../../models/products.php" enctype="multipart/form-data">
+                                            <form method="POST" action="../../models/products.php">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Tên:</label>
                                                     <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
@@ -277,17 +277,17 @@
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Danh mục:</label>
 
-                                                    <select class="form-select" name="categories" aria-label="Default select example">
+                                                    <select class="form-select" name="category_id" aria-label="Default select example">
                                                         <option selected>Chọn danh mục</option>
                                                         <?php foreach ($categories as $key => $value) : ?>
-                                                            <option value="<?= $value['id'] ?>"><?= $value['name'] ?></option>
+                                                            <option <?= $value['id'] ?>><?= $value['name'] ?></option>
                                                         <?php endforeach ?>
                                                     </select>
                                                 </div>
-                                              <div class="modal-footer">
-                                                <button type="" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                                <button type="submit" class="btn btn-primary">Lưu</button>
-                                            </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                                    <button type="button" class="btn btn-primary">Lưu</button>
+                                                </div>
                                             </form>
                                         </div>
 
