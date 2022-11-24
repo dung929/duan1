@@ -284,12 +284,11 @@
                                                         <?php endforeach ?>
                                                     </select>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                                    <button type="button" class="btn btn-primary">Lưu</button>
+                                                </div>
                                             </form>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                                <button type="button" class="btn btn-primary">Lưu</button>
-                                            </div>
                                         </div>
 
                                     </div>
