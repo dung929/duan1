@@ -4,6 +4,7 @@ require_once 'Controllers/AdminControllers.php';
 require_once 'Controllers/quanlitourControllers.php';
 require_once 'Controllers/quanlibookingControllers.php';
 require_once 'Controllers/quanliuserControllers.php';
+require_once 'Controllers/TourControllers.php';
 // http://localhost?ten_bien=giatri&ten_bien2=giatri2
 // http://localhost?url=create_tour
 // B1. Lấy thông tin đường dẫn muốn truy cập vào ở thanh địa chỉ
@@ -31,8 +32,8 @@ switch ($url) {
     case 'qltour_index':
         quanlitour();
         break;
-    case 'create-tour':
-        // Gọi controller tìm đến hàm hiển thị view tạo mới tour
+   case 'travel':
+         travel();
         break;
     default:
         echo 'Đường dẫn không tồn tại';
