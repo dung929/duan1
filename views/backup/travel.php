@@ -1,11 +1,4 @@
-<?php
-require_once('../model/db.php');
-$sql = "SELECT products.id,price,number,products.name,content,image,time_start,book_tour.id as tour_id,city.name as name_city FROM book_tour JOIN products ON book_tour.id_tour=products.id JOIN detail ON detail.id_products=products.id JOIN city ON city.id=detail.id_city";
-$statement = $connect->prepare($sql);
-$statement->execute();
-$book_tour = $statement->fetchAll();
-$status = '';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +7,8 @@ $status = '';
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./style/travel.css">
-  <link rel="stylesheet" href="./style/home.css">
+  <link rel="stylesheet" href="views/backup/style/travel.css">
+  <link rel="stylesheet" href="views/backup/style/home.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/e123c1a84c.js" crossorigin="anonymous"></script>
@@ -26,7 +19,7 @@ $status = '';
   <header>
     <div class=" flex justify-between items-center max-w-7xl mx-auto">
       <div class="">
-        <img src="./image/logo.png" alt="" class="w-[100px]" />
+        <img src="views/backup/image/logo.png" alt="" class="w-[100px]" />
       </div>
       <div class="">
         <ul class=" flex ">
@@ -54,7 +47,7 @@ $status = '';
   <div class="max-w-7xl mx-auto">
     <h1>Du lịch giá rẻ</h1>
     <div class="grid grid-cols-3 gap-8">
-      <?php foreach ($book_tour as $key =>  $value) :
+      <?php foreach ($travels as $key =>$value) :
         if ($value['number'] > 0) {
           $status = "Còn vé";
         } else {
@@ -62,7 +55,7 @@ $status = '';
         } ?>
         <div>
           <form action="dat_tour.php?id=<?= $value['id'] ?>" method="POST" enctype="multipart/form-data">
-            <img src="<?= './image/' . $value['image'] ?>" alt="">
+            <img src="<?= 'views/backup/image/' . $value['image'] ?>" alt="">
             <h2><?= $value['time_start'] ?></h2>
             <h2><?= $value['name'] ?></h2>
             <h2>Mã Tour:<?= $value['tour_id'] ?></h2>

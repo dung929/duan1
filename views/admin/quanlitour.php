@@ -285,8 +285,8 @@
                                                     </select>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                                    <button type="button" class="btn btn-primary">Lưu</button>
+                                                    <button type="reset" class="btn btn-secondary" data-dismiss="modal">Delete</button>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
                                                 </div>
                                             </form>
                                         </div>

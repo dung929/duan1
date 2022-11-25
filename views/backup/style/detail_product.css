@@ -120,7 +120,7 @@ a {
   margin-left: 450px;
 } */
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1500px) {
   .header-btn-left {
     margin-left: 450px;
   }
