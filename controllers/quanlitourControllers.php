@@ -8,9 +8,8 @@ function  quanlitour()
     $categories = getAllCategories();
     include_once './views/admin/quanlitour.php';
 }
-function taotour(){
-    $taotour = createTour()
-;
-header("refresh:1");
+function taotour()
+{
+    $taotour = createTour();
 }
-
+   

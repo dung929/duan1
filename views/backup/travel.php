@@ -50,23 +50,41 @@
       <?php foreach ($travels as $key =>$value) :
         if ($value['number'] > 0) {
           $status = "Còn vé";
-        } else {
-          $status = "Hết vé";
-        } ?>
-        <div>
-          <form action="dat_tour.php?id=<?= $value['id'] ?>" method="POST" enctype="multipart/form-data">
+          ?>
+          <div>
+          <form action="index.php?url=detail_product&id=<?= $value['id']?>" method="POST" enctype="multipart/form-data">
             <img src="<?= 'views/backup/image/' . $value['image'] ?>" alt="">
             <h2><?= $value['time_start'] ?></h2>
             <h2><?= $value['name'] ?></h2>
             <h2>Mã Tour:<?= $value['tour_id'] ?></h2>
             <h2>Địa điểm xuất phát:<?= $value['name_city'] ?></h2>
             <h2>Giá: <?= $value['price'] ?>$</h2>
-            <input name="number" value="<?= "Số vé: " . $value['number'] ?>"></input>
-            <input type="text" name="status" value="<?= $status ?>" disabled>
+            <h2>Khu vuc: <?= $value['tendm'] ?></h2>
+            <input name="number" value="<?= "Số vé: " . $value['number'] ?>" disabled></input>
+            <input type="text" name="status" value="<?='Tình trạng:'. $status ?>" disabled>
             <br>
             <button>Xem chi tiết</button>
           </form>
         </div>
+        <?php } else {
+          $status = "Hết vé";
+          ?>
+          <div>
+          <form action="#" method="POST" enctype="multipart/form-data">
+            <img src="<?= 'views/backup/image/' . $value['image'] ?>" alt="">
+            <h2><?= $value['time_start'] ?></h2>
+            <h2><?= $value['name'] ?></h2>
+            <h2>Mã Tour:<?= $value['tour_id'] ?></h2>
+            <h2>Địa điểm xuất phát:<?= $value['name_city'] ?></h2>
+            <h2>Giá: <?= $value['price'] ?>$</h2>
+            <h2>Khu vuc: <?= $value['tendm'] ?></h2>
+            <input name="number" value="<?= "Số vé: " . $value['number'] ?>" disabled></input>
+            <input type="text" name="status" value="<?='Tình trạng:'. $status ?>" disabled>
+            <br>
+            <button>Xem chi tiết</button>
+          </form>
+        </div>
+      <?php  } ?>
       <?php endforeach ?>
     </div>
   </div>

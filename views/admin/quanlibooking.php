@@ -239,39 +239,42 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Tên</th>
-                                    <th>Giá</th>
-                                    <th>Thời gian bắt dầu</th>
-                                    <th>Thời gian kết thúc</th>
-                                    <th>Nội dung</th>
-                                    <th>Ảnh</th>
+                                    <th>Tên Tour</th>
+                                    <th>Tên Khách Hàng</th>
+                                    <th>Số Người Đi</th>
+                                    <th>Thời gian đặt tour</th>
+                                    <th>Nhân viên hướng dẫn</th>
+                                    <th>Phương tiện</th>
+                                    <th>Khách sạn</th>
                                     <th>Danh mục</th>
+                                    <th>Tổng tiền</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Tên</th>
-                                    <th>Giá</th>
-                                    <th>Thời gian bắt dầu</th>
-                                    <th>Thời gian kết thúc</th>
-                                    <th>Nội dung</th>
-                                    <th>Ảnh</th>
+                                    <th>Tên Tour</th>
+                                    <th>Tên Khách Hàng</th>
+                                    <th>Số Người Đi</th>
+                                    <th>Thời gian đặt tour</th>
+                                    <th>Nhân viên hướng dẫn</th>
+                                    <th>Phương tiện</th>
+                                    <th>Khách sạn</th>
                                     <th>Danh mục</th>
+                                    <th>Tổng tiền</th>
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <?php foreach ($products as $key => $value) : ?>
+                                <?php foreach ($booking as $key => $value) : ?>
                                     <tr>
                                         <td><?= $value['id'] ?></td>
-                                        <td><?= $value['name'] ?></td>
-                                        <td><?= $value['price'] ?></td>
-                                        <td><?= $value['time_start'] ?></td>
-                                        <td><?= $value['time_end'] ?></td>
-                                        <td><?= $value['content'] ?></td>
-                                        <td><img src="<?= $value['image'] ?>" alt="" height="100"></td>
+                                        <td><?= $value['name_tour'] ?></td>
+                                        <td><?= $value['name_client'] ?></td>
+                                        <td><?= $value['number_client'] ?></td>
+                                        <td><?= $value['time_booktour'] ?></td>
+                                        <td><?= $value['coach_tour'] ?></td>
+                                        <td><?= $value['hotel_tour'] ?></td>
                                         <td><?= $value['category_name'] ?></td>
+                                        <td><?= $value['sum_tour'] ?></td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>

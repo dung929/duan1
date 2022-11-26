@@ -1,11 +1,3 @@
-<?php
-require_once('../model/db.php');
-$id = $_GET['id'];
-$sql = "SELECT products.id,price,products.name,content,image,time_start,book_tour.id as tour_id,city.name as name_city FROM book_tour JOIN products ON book_tour.id_tour=products.id JOIN detail ON detail.id_products=products.id JOIN city ON city.id=detail.id_city WHERE products.id= $id";
-$statement = $connect->prepare($sql);
-$statement->execute();
-$value = $statement->fetch();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +9,7 @@ $value = $statement->fetch();
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/e123c1a84c.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./style/home.css">
+  <link rel="stylesheet" href="views/backup/style/footer.css">
 </head>
 
 <body>
@@ -54,21 +46,21 @@ $value = $statement->fetch();
 
     <marquee behavior="#" direction="left">
       <p class="text-2xl font-bold text-red-500 mt-[30px] mb-[30px">
-        <?= $value['name'] ?>
+        <?= $dat_tour['name'] ?>
       </p>
     </marquee>
 
     <div class="grid grid-cols-2 gap-8">
       <div>
-        <img src="<?= './image/' . $value['image'] ?>" alt="" class="w-[600px] mr-[30px] rounded-2xl">
+        <img src="<?= './image/' . $dat_tour['image'] ?>" alt="" class="w-[600px] mr-[30px] rounded-2xl">
         <div class="border-2 rounded-2xl  mt-[20px] bg-pink-300">
           <h1 class="text-center text-[20px] font-bold p-2">Thông tin Tour</h1>
           <hr>
           <div class="bg-pink-200 rounded-2xl p-2 font-bold mt-[10px] mb-[10px]">
-            <h2><?= $value['name'] ?></h2>
+            <h2><?= $dat_tour['name'] ?></h2>
           </div>
           <hr>
-          <p class="p-3 h-[100%]"><?= $value['content'] ?></p>
+          <p class="p-3 h-[100%]"><?= $dat_tour['content'] ?></p>
         </div>
         <div class="border-2  rounded-2xl  mt-[20px]">
           <h2 class="text-center text-[20px] border-b-2 bg-blue-300 rounded-2xl p-2 text-white font-bold">Liên hệ tư vấn viên</h2>
@@ -79,11 +71,11 @@ $value = $statement->fetch();
       </div>
       <div>
         <div class="border-2 p-5 bg-neutral-700 rounded-2xl w-[600px]">
-          <form action="">
-            <h2 class="text-[30px] font-bold text-orange-500 mb-[20px]">Giá tour: <input type="text" id="price" class="bg-neutral-700" onchange="show()" value="<?= $value['price'] . '$/người' ?>" disabled></h2>
+          <form action="index.php?url=tao_booking" method="POST">
+            <h2 class="text-[30px] font-bold text-orange-500 mb-[20px]">Giá tour: <input type="text" id="price" name="" class="bg-neutral-700" onchange="show()" value="<?= $dat_tour['price'] . '$/người' ?>" disabled></h2>
             <h2 class="inline-block text-white font-bold mb-[20px]">Người lớn</h2>
             <select name="nguoilon" id="nguoilon" onchange="show()" class="rounded-2xl w-[160px] p-2">
-            <option value="0">--Please choose an option--</option>
+              <option value="0">--Please choose an option--</option>
               <option value="1">1 người</option>
               <option value="2">2 người</option>
               <option value="3">3 người</option>
@@ -91,7 +83,7 @@ $value = $statement->fetch();
             </select>
             <h2 class="inline-block text-white font-bold mb-[20px]">Trẻ em</h2>
             <select name="treem" id="treem" onchange="show()" class="rounded-2xl w-[160px] p-2">
-            <option value="0">--Please choose an option--</option>
+              <option value="0">--Please choose an option--</option>
               <option value="1">1 người</option>
               <option value="2">2 người</option>
               <option value="3">3 người</option>
@@ -102,20 +94,22 @@ $value = $statement->fetch();
             <input type="date" name="date_dat_tour" id="" class="p-2 rounded-2xl text-center bg-white">
             <br>
             <h2 class="inline-block text-white font-bold mb-[20px]">Tổng tiền</h2>
-            <span class="p-2 rounded-2xl text-center bg-white"><input type="text" id="sum">VNĐ</span>
+            <span class="p-2 rounded-2xl text-center bg-white"><input type="text" id="sum" name="sumtt" disabled>VNĐ</span>
             <br>
-            <button class="border-2 rounded-2xl p-3 w-[200px] mx-auto block text-white font-bold hover:bg-[aqua]"><a href="index.php">Đặt tour</a></button>
+            <button class="border-2 rounded-2xl p-3 w-[200px] mx-auto block text-white font-bold hover:bg-[aqua]"><a href="">Đặt tour</a></button>
           </form>
+          <button class="border-2 rounded-2xl p-3 w-[200px] mx-auto block text-white font-bold hover:bg-[aqua] mt-[10px]"><a href="index.php?url=travel">Hủy tour</a></button>
+
         </div>
 
         <div class="border-2  rounded-2xl w-[600px] mt-[50px]">
           <h2 class="text-center text-[20px] border-b-2 bg-blue-300 rounded-2xl p-2 text-white font-bold">Dịch vụ kèm theo</h2>
-          <div class="flex justify-space-between p-3">
+          <div class="flex justify-between p-3 text-center">
             <div>
-              <i class="fas fa-user-shield"><a href="" class="ml-[5px]">Bảo hiểm</a></i>
+              <i class="fas fa-hotel"><a href="" class="ml-[5px]">Khách sạn</a></i>
             </div>
             <div>
-              <i class="fas fa-utensils"><a href="" class="ml-[5px]">Bữa ăn</a></i>
+              <i class="fas fa-car"><a href="" class="ml-[5px]">Phương tiện</a></i>
             </div>
             <div>
               <i class="fas fa-users"><a href="" class="ml-[5px]">Hướng dẫn viên</a></i>
@@ -190,15 +184,13 @@ $value = $statement->fetch();
 </body>
 
 </html>
-<script src="./js/home.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
+  var a = document.getElementById('nguoilon').value;
+  var b = document.getElementById('treem').value;
+  var c = document.getElementById('price').value
 
-      var a =  document.getElementById('nguoilon').value;
-      var b = document.getElementById('treem').value;
-      var c = document.getElementById('price').value
-      function show() {
-        var sum = document.getElementById('sum')
-            sum.value = parseInt(nguoilon.value) * parseInt(price.value)*23000 + parseInt(treem.value) * parseInt(price.value)*75/100*23000;
-    }
+  function show() {
+    var sum = document.getElementById('sum')
+    sum.value = parseInt(nguoilon.value) * parseInt(price.value) * 23000 + parseInt(treem.value) * parseInt(price.value) * 75 / 100 * 23000;
+  }
 </script>
