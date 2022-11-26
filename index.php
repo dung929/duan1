@@ -18,7 +18,7 @@ switch ($url) {
         break;
     case 'taotour':
         // Gọi controller TourController
-        echo taotour();
+        taotour();
         break;
     case 'admin_index':
         echo index();
@@ -26,14 +26,29 @@ switch ($url) {
     case 'qlbooking_index':
         quanlibooking();
         break;
+    case 'tao_booking':
+        taoBooking();
+        break;
     case 'qluser_index':
         quanliuser();
         break;
     case 'qltour_index':
         quanlitour();
         break;
-   case 'travel':
-         travel();
+    case 'travel':
+        travel();
+        break;
+    case 'detail_product':
+        $id = $_GET['id'];
+        getDetail_productOne($id);
+        break;
+    case 'dat_tour':
+        $id = $_GET['id'];
+        dat_tour($id);
+        break;
+    case 'contact_client':
+        $id = $_GET['id'];
+        contact_client($id);
         break;
     default:
         echo 'Đường dẫn không tồn tại';

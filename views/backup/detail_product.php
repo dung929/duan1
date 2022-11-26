@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="style/detail_product.css" />
+  <link rel="stylesheet" href="views/backup/style/detail_product.css" />
   <script src="https://kit.fontawesome.com/e123c1a84c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -20,7 +20,7 @@
     </div>
     <div class="header-nav">
       <div class="header-logo">
-        <img src="./image/logo.png" alt="" />
+        <img src="views/backup/image/logo.png" alt="" />
       </div>
       <div class="header-menu">
         <ul class="menu">
@@ -49,7 +49,7 @@
   </div>
   <div class="container-info">
     <div class="display-container column">
-      <img class="mySlides" src="https://canxem.com/img/1.jpg" />
+      <img class="mySlides" width="400px" src="<?='views/backup/image/'. $details['image']?>" />
       <img class="mySlides" src="https://canxem.com/img/2.jpg" />
       <img class="mySlides" src="https://canxem.com/img/3.jpg" />
       <img class="mySlides" src="https://canxem.com/img/4.jpg" />
@@ -62,20 +62,26 @@
       </button>
     </div>
     <div class="info column">
-      <h3>miền ha long</h3>
-      <h1>đỗ tuấn anh</h1>
-      <h2 class="price">1.000.000</h2>
-      <p>
-        Gặp em rồi anh mới biết rằng anh không thể không yêu. Ngay phút giây
-        đầu tiên thấy em anh nghĩ rằng trái tim mình đã vĩnh viễn thuộc về em.
-        Anh yêu em. GATO rất lớn với bạn gái nào nhận được những lời tỏ tình
-        hay và lãng mạn này đó nhé !
-      </p>
-      <button class="custom-btn btn-12">
-        <span>thank you!</span><span>Đặt tour</span>
-      </button>
+      <form action="index.php?url=dat_tour&id=<?php echo $details['id'] ?>" method="POST">
+        <h3><?= $details['name'] ?></h3>
+        <input name="number" value="<?= "Số vé: " . $details['number'] ?>" disabled></input>
+        <h2 class="price"><?= $details['price'] . '$' ?></h2>
+        <p>
+          <?= $details['content'] ?>
+        </p>
+        <h2>Xuất phát: <?= $details['name_city'] ?></h2>
+        <h2>Phương tiện: <?= $details['tenpt'] ?></h2>
+        <h2>Nhân viên hướng dẫn: <?= $details['tennv'] ?></h2>
+        <h2>Tên khách sạn cư trú: <?= $details['tenks'] ?></h2>
+        <button class="custom-btn btn-12">
+          <span>thank you!</span>
+          <span>Đặt tour</span>
+        </button>
+      </form>
     </div>
   </div>
+  <h1>Lịch trình</h1>
+  <p><?= $details['schedule'] ?></p>
   <div class="product-show">
     <div class="product">
       <img class="" src="https://canxem.com/img/1.jpg" />
