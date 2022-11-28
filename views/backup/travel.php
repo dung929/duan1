@@ -62,6 +62,7 @@
             <h2>Khu vuc: <?= $value['tendm'] ?></h2>
             <input name="number" value="<?= "Số vé: " . $value['number'] ?>" disabled></input>
             <input type="text" name="status" value="<?='Tình trạng:'. $status ?>" disabled>
+            <input type="text" name="id" value="<?= $value['id_cl'] ?>">
             <br>
             <button>Xem chi tiết</button>
           </form>
@@ -80,6 +81,7 @@
             <h2>Khu vuc: <?= $value['tendm'] ?></h2>
             <input name="number" value="<?= "Số vé: " . $value['number'] ?>" disabled></input>
             <input type="text" name="status" value="<?='Tình trạng:'. $status ?>" disabled>
+            <input type="text" name="id" value="<?= $value['id_cl'] ?>">
             <br>
             <button>Xem chi tiết</button>
           </form>

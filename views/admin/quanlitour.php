@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -194,7 +195,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']['username'] ?></span>
                                 <img class="img-profile rounded-circle" src="template/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -307,6 +308,7 @@
                                             <th>Nội dung</th>
                                             <th>Ảnh</th>
                                             <th>Danh mục</th>
+                                            <th>Update</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -319,6 +321,7 @@
                                             <th>Nội dung</th>
                                             <th>Ảnh</th>
                                             <th>Danh mục</th>
+                                            <th>Update</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -330,8 +333,9 @@
                                                 <td><?= $value['time_start'] ?></td>
                                                 <td><?= $value['time_end'] ?></td>
                                                 <td><?= $value['content'] ?></td>
-                                                <td><img src="<?= $value['image'] ?>" alt="" height="100"></td>
+                                                <td><img src="<?='views/backup/image/'. $value['image'] ?>" alt="" height="100"></td>
                                                 <td><?= $value['category_name'] ?></td>
+                                                <td><a href="">Sửa</a></td>
                                             </tr>
                                         <?php endforeach ?>
                                     </tbody>
