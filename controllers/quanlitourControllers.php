@@ -4,7 +4,8 @@ require_once('models/categories.php');
 
 function  quanlitour()
 {
-    $products = getAllProducts();
+    $search = isset($_POST['search']) ? $_POST['search'] : '';
+    $products = getAllProducts($search);
     $categories = getAllCategories();
     session_start();
     if (!isset($_SESSION['user'])) {
