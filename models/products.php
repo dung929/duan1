@@ -1,8 +1,8 @@
 <?php
 require_once 'models/db.php';
-function getAllProducts()
+function getAllProducts($search)
 {
-    $sql = "SELECT products.*, categories.name as category_name FROM products join categories ON  products.category_id = categories.id ";
+    $sql = "SELECT products.*, categories.name as category_name FROM products left join categories ON  products.category_id = categories.id where products.name Like '%$search%' OR products.price LIKE '%$search%'  ";
 
     return getData($sql, FETCH_ALL);
 }
