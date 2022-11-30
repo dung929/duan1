@@ -1,6 +1,6 @@
 <?php
 require_once 'models/db.php';
-function getAllProducts($search)
+function getAllProducts($search = '')
 {
     $sql = "SELECT products.*, categories.name as category_name FROM products left join categories ON  products.category_id = categories.id where products.name Like '%$search%' OR products.price LIKE '%$search%'  ";
 
@@ -104,4 +104,38 @@ function getContact_client()
         . "(name,address,phone,image)"
         . " VALUES ('$name', '$addr', '$phone')";
     return getData($sql, NOT_FETCH);
+}
+function getProductsTrending()
+{
+    $sql = "SELECT products.*, categories.name as category_name FROM products left join categories ON  products.category_id = categories.id where products.is_trending = 1 ";
+    return getData($sql, FETCH_ALL);
+}
+function listProducts($search = '', $time_start = '', $time_end = '', $days = '',  $category = '' ){
+    $sql = "SELECT products.*, categories.name as category_name FROM products left join categories ON  products.category_id = categories.id";
+    if ($search || $time_start || $time_end || $days || $category){
+        $sql .= ' where ';
+    }
+    $and = '';
+    if ($search){
+        $sql .= "products.name Like '%$search%'";
+        $and = ' and ';
+    }
+     if ($time_start){
+        $sql .= "{$and}products.time_start <= '$time_start'";
+        $and = ' and ';
+     }
+     if ($time_end){
+        $sql .= "{$and}products.time_end >= '$time_end'";
+        $and = ' and ';
+     }
+     if ($days){
+        $sql .= "{$and}products.days = $days";
+        $and = ' and ';
+     }
+     if ($category){
+        $sql .= "{$and}products.category_id = $category";
+     }
+    //  print_r($sql);
+    //  exit;
+    return getData($sql, FETCH_ALL);
 }
