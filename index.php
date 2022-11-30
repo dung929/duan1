@@ -5,10 +5,17 @@ require_once 'Controllers/quanlitourControllers.php';
 require_once 'Controllers/quanlibookingControllers.php';
 require_once 'Controllers/quanliuserControllers.php';
 require_once 'Controllers/TourControllers.php';
+require_once 'Controllers/HomeControllers.php';
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case 'login':
         login();
+        break;
+    case 'list_products':
+        list_products();
+        break;
+    case 'home':
+        home();
         break;
     case 'login_user':
         login_user();
