@@ -26,5 +26,5 @@ function logout()
 {
     session_start();
     unset($_SESSION['user']);
-    header('location:index.php?url=login_user');
+    header('location:index.php?url=login');
 }

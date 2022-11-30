@@ -108,7 +108,7 @@
                 <input type="hidden" name="hotel" value="<?= $dat_tour['name_hotel'] ?>">
                 <input type="hidden" name="cate" value="<?= $dat_tour['tendm'] ?>">
                 <input type="hidden" name="price" value="<?= $dat_tour['price'] ?>">
-                <input type="hidden" name="id_client" value=" <?= $_SESSION['user']['username'] ?>">
+                <input type="hidden" name="id_client" value=" <?= $_SESSION['user']['name'] ?>">
               </form>
               <button class="border-2 rounded-2xl p-3 w-[200px] mx-auto block text-white font-bold hover:bg-[aqua] mt-[10px]"><a href="index.php?url=travel">Hủy tour</a></button>
             <?php } else { ?>
