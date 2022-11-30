@@ -19,3 +19,12 @@ function list_products(){
     $products = listProducts($search, $time_start, $time_end, $days, $category);
     include_once './views/home/list_products.php';
 }
+function blog(){
+    include_once './views/home/blog.php';
+}
+function about(){
+    include_once './views/home/about.php';
+}
+function contact(){
+    include_once './views/home/contact.php';
+}

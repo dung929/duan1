@@ -11,6 +11,15 @@ switch ($url) {
     case 'login':
         login();
         break;
+    case 'contact':
+        contact();
+        break;
+    case 'blog':
+        blog();
+        break;
+    case 'about':
+        about();
+        break;
     case 'list_products':
         list_products();
         break;
@@ -24,7 +33,7 @@ switch ($url) {
         taotour();
         break;
     case 'admin_index':
-         index();
+        index();
         break;
     case 'qlbooking_index':
         quanlibooking();
