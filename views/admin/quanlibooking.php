@@ -195,7 +195,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']['username'] ?> </span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user_admin']['username'] ?> </span>
                                 <img class="template/img-profile rounded-circle" src="template/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -213,7 +213,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="index.php?url=logout_user" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -240,12 +240,12 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Tên Tour</th>
+                                <th>Tên Tour</th>
                                     <th>Tên Khách Hàng</th>
                                     <th>Số Người Đi</th>
                                     <th>Thời gian đặt tour</th>
-                                    <th>Nhân viên hướng dẫn</th>
                                     <th>Phương tiện</th>
+                                    <th>Nhân viên hướng dẫn</th>
                                     <th>Khách sạn</th>
                                     <th>Danh mục</th>
                                     <th>Tổng tiền</th>
@@ -257,8 +257,8 @@
                                     <th>Tên Khách Hàng</th>
                                     <th>Số Người Đi</th>
                                     <th>Thời gian đặt tour</th>
-                                    <th>Nhân viên hướng dẫn</th>
                                     <th>Phương tiện</th>
+                                    <th>Nhân viên hướng dẫn</th>
                                     <th>Khách sạn</th>
                                     <th>Danh mục</th>
                                     <th>Tổng tiền</th>
@@ -267,15 +267,15 @@
                             <tbody>
                                 <?php foreach ($booking as $key => $value) : ?>
                                     <tr>
-                                        <td><?= $value['id'] ?></td>
                                         <td><?= $value['name_tour'] ?></td>
                                         <td><?= $value['name_client'] ?></td>
                                         <td><?= $value['number_client'] ?></td>
                                         <td><?= $value['time_booktour'] ?></td>
                                         <td><?= $value['coach_tour'] ?></td>
+                                        <td><?= $value['guide_tour'] ?></td>
                                         <td><?= $value['hotel_tour'] ?></td>
                                         <td><?= $value['category_name'] ?></td>
-                                        <td><?= $value['sum_tour'] ?></td>
+                                        <td><?= $value['sum_tour'] ?>$</td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>

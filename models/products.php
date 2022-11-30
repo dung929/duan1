@@ -6,9 +6,6 @@ function getAllProducts($search = '')
 
     return getData($sql, FETCH_ALL);
 }
-function insertId()
-{
-}
 
 function getTaoBooking()
 {

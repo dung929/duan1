@@ -1,11 +1,4 @@
-<?php
-session_start(); // Bắt đầu sử dụng session ở màn hình này
-// var_dump($_SESSION);
 
-// Nếu lần đầu tiên hoặc không có lỗi thì sẽ không có key errors trong $_GET
-// /login.php?errors=...
-$errors = isset($_GET['errors']) ? $_GET['errors'] : '';
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,12 +31,6 @@ $errors = isset($_GET['errors']) ? $_GET['errors'] : '';
           <li><a href="travel/travel.php">travel</a></li>
           <li><a href="blog.php">blog</a></li>
           <li><a href="contact.php">contact</a></li>
-          <!-- <?php if (isset($_SESSION['user'])) { ?>
-            Chào <?= $_SESSION['user']['username'] ?> !
-            <a href="../model/logout.php">Đăng xuất</a>
-          <?php } else { ?>
-            header("location:home.php");
-          <?php } ?> -->
         </ul>
       </div>
       <div class="header-btn-left">

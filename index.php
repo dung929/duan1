@@ -24,7 +24,7 @@ switch ($url) {
         taotour();
         break;
     case 'admin_index':
-        echo index();
+         index();
         break;
     case 'qlbooking_index':
         quanlibooking();
@@ -60,6 +60,10 @@ switch ($url) {
     case 'logout':
         logout();
         break;
+    case 'logout_user':
+        logout_user();
+        break;
+
     default:
         echo 'Đường dẫn không tồn tại';
         break;
