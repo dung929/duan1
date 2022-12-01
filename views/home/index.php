@@ -420,9 +420,29 @@
             </div>
             <div class="row pb-3">
                 <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                    <?php foreach ($products as $key => $value) : ?>
+                        <div class="blog-item">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="<?= 'template_client/img/' . $value['image']  ?>" alt="">
+                                <div class="blog-date">
+                                    <h6 class="font-weight-bold mb-n1">01</h6>
+                                    <small class="text-white text-uppercase">Jan</small>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4">
+                                <div class="d-flex mb-2">
+                                    <a class="text-primary text-uppercase text-decoration-none" href=""><?= $value['name']  ?></a>
+                                    <span class="text-primary px-2">|</span>
+                                </div>
+                                <a class="h5 m-0 text-decoration-none" href=""><?= $value['content']  ?></a>
+                            </div>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 pb-2">
                     <div class="blog-item">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="template_client/img/blog-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="template_client/img/blog-2.jpg" alt="">
                             <div class="blog-date">
                                 <h6 class="font-weight-bold mb-n1">01</h6>
                                 <small class="text-white text-uppercase">Jan</small>
@@ -434,26 +454,7 @@
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">biển cát bà hòa vào màu xanh tươi của biển cả nơi phía nam quảng ninh...</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 pb-2">
-                    <div class="blog-item">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="template_client/img/blog-2.jpg" alt="">
-                            <div class="blog-date">
-                                <h6 class="font-weight-bold mb-n1">02</h6>
-                                <small class="text-white text-uppercase">Jan</small>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4">
-                            <div class="d-flex mb-2">
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
-                                <span class="text-primary px-2">|</span>
-                                <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
-                            </div>
-                            <a class="h5 m-0 text-decoration-none" href="">không gian yên bình tĩnh lặng tránh xa nơi phồn hoa đô thị</a>
+                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
                         </div>
                     </div>
                 </div>
@@ -462,7 +463,7 @@
                         <div class="position-relative">
                             <img class="img-fluid w-100" src="template_client/img/blog-3.jpg" alt="">
                             <div class="blog-date">
-                                <h6 class="font-weight-bold mb-n1">03</h6>
+                                <h6 class="font-weight-bold mb-n1">01</h6>
                                 <small class="text-white text-uppercase">Jan</small>
                             </div>
                         </div>
@@ -472,7 +473,7 @@
                                 <span class="text-primary px-2">|</span>
                                 <a class="text-primary text-uppercase text-decoration-none" href="">Tours & Travel</a>
                             </div>
-                            <a class="h5 m-0 text-decoration-none" href="">đà nẵng nơi của bãi cắt trắng nắng vàng mộng mơ</a>
+                            <a class="h5 m-0 text-decoration-none" href="">Dolor justo sea kasd lorem clita justo diam amet</a>
                         </div>
                     </div>
                 </div>
