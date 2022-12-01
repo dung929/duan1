@@ -16,11 +16,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/template_client/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="template_client/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="template_client/lib/tempusdominus/template_client/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="template_client/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="template_client/css/style.css" rel="stylesheet">
@@ -43,11 +43,11 @@
     <div class="container-fluid page-header">
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-4 text-white text-uppercase">Blog</h3>
+                <h3 class="display-4 text-white text-uppercase">About</h3>
                 <div class="d-inline-flex text-white">
                     <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Blog</p>
+                    <p class="m-0 text-uppercase">About</p>
                 </div>
             </div>
         </div>
@@ -368,20 +368,21 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="template_client/lib/easing/easing.min.js"></script>
-    <script src="template_client/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="template_client/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="template_client/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="template_client/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="template_client/lib/easing/easing.min.js"></script>
+<script src="template_client/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="template_client/lib/tempusdominus/js/moment.min.js"></script>
+<script src="template_client/lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="template_client/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Contact Javascript File -->
-    <script src="template_client/mail//jqBootstrapValidation.min.js"></script>
-    <script src="template_client/mail//contact.js"></script>
+<!-- Contact Javascript File -->
+<script src="template_client/mail/jqBootstrapValidation.min.js"></script>
+<script src="template_client/mail/contact.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="template_client/js/main.js"></script>
+<!-- Template Javascript -->
+<script src="template_client/js/main.js"></script>
 </body>
+
 </html>
