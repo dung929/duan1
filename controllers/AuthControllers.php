@@ -28,3 +28,6 @@ function logout()
     unset($_SESSION['user']);
     header('location:index.php?url=home');
 }
+function register(){
+    include_once './views/auth/register.php';
+}

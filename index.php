@@ -11,6 +11,9 @@ switch ($url) {
     case 'login':
         login();
         break;
+        case 'register':
+            register();
+            break;
     case 'qluser':
         qluser();
         break;
@@ -56,7 +59,6 @@ switch ($url) {
     case 'detail_product':
         $id = $_GET['id'];
         getDetail_productOne($id);
-
         break;
     case 'dat_tour':
         $id = $_GET['id'];
@@ -75,7 +77,6 @@ switch ($url) {
     case 'logout_user':
         logout_user();
         break;
-
     default:
         echo 'Đường dẫn không tồn tại';
         break;
