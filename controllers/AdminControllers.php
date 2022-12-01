@@ -36,6 +36,6 @@ function login_user()
 function logout_user()
 {
     session_start();
-    unset($_SESSION['user']);
+    unset($_SESSION['user_admin']);
     header('location:index.php?url=login_user');
 }
