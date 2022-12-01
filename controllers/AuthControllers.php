@@ -17,7 +17,7 @@ function login()
         } else {
             session_start();
             $_SESSION['user'] = $client;
-            header("location:index.php?url=travel");
+            header("location:index.php?url=home");
         }
     }
     include_once './views/auth/login.php';
@@ -26,5 +26,5 @@ function logout()
 {
     session_start();
     unset($_SESSION['user']);
-    header('location:index.php?url=login');
+    header('location:index.php?url=home');
 }
