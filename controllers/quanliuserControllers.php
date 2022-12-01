@@ -1,5 +1,11 @@
 <?php
 require_once('models/client.php');
+
+
+function qluser(){
+    $client = getAllClient();
+    include_once './views/admin/quanliuser.php';
+}
 function  quanliuser()
 {
     session_start();
@@ -9,8 +15,4 @@ function  quanliuser()
     } else if (isset($_SESSION['user_admin'])) {
     include_once './views/admin/quanliuser.php';
     }
-}
-function qluser(){
-    $client = getAllClient();
-    include_once './views/admin/quanliuser.php';
 }
