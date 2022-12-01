@@ -215,7 +215,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="index.php?url=logout_user" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="index.php?url=logout_user">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
