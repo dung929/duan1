@@ -132,7 +132,5 @@ function listProducts($search = '', $time_start = '', $time_end = '', $days = ''
      if ($category){
         $sql .= "{$and}products.category_id = $category";
      }
-    //  print_r($sql);
-    //  exit;
     return getData($sql, FETCH_ALL);
 }

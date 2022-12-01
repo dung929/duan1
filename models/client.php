@@ -6,3 +6,7 @@ function clientCheckExist($username)
 
     return getData($sql, FETCH_ONE);
 }
+function getAllClient(){
+    $sql = "SELECT * FROM client";
+    return getData($sql, FETCH_ALL);
+}

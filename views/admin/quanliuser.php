@@ -236,7 +236,42 @@
 
                     <!-- Content Row -->
                   
-
+                    <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Tên</th>
+                                            <th>Tên đăng nhập</th>
+                                            <th>Địa Chỉ</th>
+                                            <th>Phone</th>
+                                            <th>Ảnh</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                    <tr>
+                                            <th>ID</th>
+                                            <th>Tên</th>
+                                            <th>Tên đăng nhập</th>
+                                            <th>Địa Chỉ</th>
+                                            <th>Phone</th>
+                                            <th>Ảnh</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <?php foreach ($client as $key => $value) : ?>
+                                            <tr>
+                                                <td><?= $value['id'] ?></td>
+                                                <td><?= $value['name'] ?></td>
+                                                <td><?= $value['username'] ?></td>
+                                                <td><?= $value['address'] ?></td>
+                                                <td><?= $value['phone'] ?></td>
+                                                <td><img src="<?='views/backup/image/'. $value['image'] ?>" alt="" height="100"></td>
+                                            </tr>
+                                        <?php endforeach ?>
+                                    </tbody>
+                                </table>
+                            </div>
                     
             <!-- End of Main Content -->
 
