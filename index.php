@@ -11,9 +11,9 @@ switch ($url) {
     case 'login':
         login();
         break;
-        case 'register':
-            register();
-            break;
+    case 'register':
+        register();
+        break;
     case 'qluser':
         qluser();
         break;
