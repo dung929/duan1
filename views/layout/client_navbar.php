@@ -9,11 +9,11 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.php?url=home" class="nav-item nav-link active">Home</a>
-                        <a href="index.php?url=about" class="nav-item nav-link">About</a>
-                        <a href="index.php?url=list_products" class="nav-item nav-link">Tour Packages</a>
-                        <a href="index.php?url=blog" class="nav-item nav-link">Blog</a>
-                        <a href="index.php?url=contact" class="nav-item nav-link">Contact</a>
+                        <a href="index.php?url=home" class="nav-item nav-link active">TRANG CHỦ</a>
+                        <a href="index.php?url=about" class="nav-item nav-link">GIỚI THIỆU</a>
+                        <a href="index.php?url=list_products" class="nav-item nav-link">DU LỊCH</a>
+                        <a href="index.php?url=blog" class="nav-item nav-link">TIN TỨC</a>
+                        <a href="index.php?url=contact" class="nav-item nav-link">LIÊN HỆ</a>
                     </div>
                 </div>
             </nav>
