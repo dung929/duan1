@@ -255,7 +255,7 @@
                                         <td><?= $value['username'] ?></td>
                                         <td><?= $value['address'] ?></td>
                                         <td><?= $value['phone'] ?></td>
-                                        <td><img src="<?= 'views/backup/image/' . $value['image'] ?>" alt="" height="100"></td>
+                                        <td><img src="<?=$value['image'] ?>" alt="" height="100"></td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>

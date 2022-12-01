@@ -31,3 +31,7 @@ function logout()
 function register(){
     include_once './views/auth/register.php';
 }
+function tao_register(){
+    $tao_register = getTaoRegister();
+    include_once './views/auth/login.php';
+}

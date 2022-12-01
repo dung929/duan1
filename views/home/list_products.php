@@ -72,7 +72,7 @@
                 <?php foreach ($products as $key => $value) : ?>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="package-item bg-white mb-2">
-                            <img class="img-fluid" src="template_client/img/package-1.jpg" alt="">
+                            <img class="img-fluid" src="<?='template/img/'. $value['image'] ?>" alt="">
                             <div class="p-4">
                                 <div class="d-flex justify-content-between mb-3">
                                     <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $value['name'] ?></small>
