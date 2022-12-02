@@ -11,6 +11,9 @@ switch ($url) {
     case 'login':
         login();
         break;
+    case 'profileUser':
+        profileUser();
+        break;
     case 'get_chart_data':
         getChartData();
         break;
