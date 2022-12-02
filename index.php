@@ -6,6 +6,7 @@ require_once 'Controllers/quanlibookingControllers.php';
 require_once 'Controllers/quanliuserControllers.php';
 require_once 'Controllers/TourControllers.php';
 require_once 'Controllers/HomeControllers.php';
+require_once 'Controllers/quanlycategory.php';
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case 'login':
@@ -55,6 +56,9 @@ switch ($url) {
         break;
     case 'qltour_index':
         quanlitour();
+        break;
+    case 'qlcate_index':
+        quanlicategory();
         break;
     case 'travel':
         travel();

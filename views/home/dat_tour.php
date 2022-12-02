@@ -160,7 +160,6 @@
             border-radius: 8px;
             width: 200px;
         }
-
     </style>
 </head>
 
@@ -204,7 +203,7 @@
                     <hr>
                     <h4>Mã tour:<?= ' ' . $details['id'] ?></h4>
                     <hr>
-                    <h4>Số lượng vé: <?= $details['number'] ?></h4>
+                    <h4>Số lượng vé: <?= $details['number'] ?><input type="hidden" value="<?= $details['number'] ?>" id="number"></h4>
                     <hr>
                     <h4>Giá: <?= $details['price'] . '  VNĐ' ?></h4>
                     <hr>
@@ -301,13 +300,13 @@
         <hr>
         <h3>Mã giảm giá</h3>
         <div>
-            <input type="text" placeholder="32589HJSD54">
-            <a href="">Sử dụng</a>
+            <input type="text" placeholder="32589HJSD54" onchange="show()" id="sale">
+            <span id="errors" style="color:red;"></span>
             <p>(*) Sau khi nhập mã voucher, vui lòng nhấn vào nút sử dụng để mã có hiệu lực.</p>
         </div>
         <hr>
         <div class="tong">
-            <span>Tổng giá trị:</span> <input type="text" id="sum" value="55" name="sum" disabled>VNĐ
+            <span>Tổng giá trị:</span> <input type="text" id="sum" value="<?= $dat_tour['price'] ?>" name="sum" disabled>VNĐ
         </div>
         <hr>
         <h2>Phương thức thanh toán</h2>
@@ -358,10 +357,28 @@
     var b = document.getElementById('treem1').value;
     var d = document.getElementById('treem2').value;
     var e = document.getElementById('treem2').value;
-    var c = document.getElementById('price').value
+    var c = document.getElementById('price').value;
+    var f = document.getElementById('sale').value;
+    var err = document.getElementById('errors').value;
+    var l = document.getElementById('number').value;
 
     function show() {
-        var sum = document.getElementById('sum')
-        sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value)*45/100 + parseInt(treem2.value) * parseInt(price.value)*25/100 + parseInt(treem3.value) * parseInt(price.value)*5/100;
+        var sum = document.getElementById('sum');
+        if (sale.value == '123') {
+            errors.innerText = '*Sử dụng mã giảm giá thành công!';
+            sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100 - 500000;
+        } else if (sale.value == 'abc') {
+            errors.innerText = '*Sử dụng mã giảm giá thành công!';
+            sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100 - 1000000;
+        } else if ((parseInt(nguoilon.value) + parseInt(treem1.value) + parseInt(treem2.value) + parseInt(treem3.value)) > parseInt(number.value)) {
+            nguoilon.value='1';
+            treem1.value='0';
+            treem2.value='0';
+            treem3.value='0';
+            alert('Số vé không đủ! Vui lòng chọn lại số người!');
+        } else {
+            sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100;
+            errors.innerText = '*Mã không đúng';
+        }
     }
 </script>
