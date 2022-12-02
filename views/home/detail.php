@@ -89,6 +89,9 @@
         .p h2{
             font-size: 20px;
         }
+        .navbar-nav{
+            margin-left: 350px;
+        }
     </style>
 </head>
 
@@ -99,7 +102,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0 ">
+    <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
                 <a href="" class="navbar-brand">
@@ -108,8 +111,8 @@
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="flex ml-[320px] justify-content-between px-3" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
+                <div class="" id="navbarCollapse">
+                    <div class="navbar-nav">
                         <a href="index.php?url=home" class="nav-item nav-link active">Home</a>
                         <a href="index.php?url=about" class="nav-item nav-link">About</a>
                         <a href="index.php?url=list_products" class="nav-item nav-link">Tour Packages</a>
@@ -200,13 +203,13 @@
                             <div class="p-4">
                                 <div class="d-flex justify-content-between mb-3">
                                     <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $value['schedule'] ?></small>
-                                    <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i><?= $value['days'] ?></small>
+                                    <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i><?= $value['days'] ?> Ngày</small>
                                 </div>
                                 <a class="h5 text-decoration-none" href="index.php?url=detail&id=<?= $value['id'] ?>"><?= $value['name'] ?></a>
                                 <div class="border-top mt-4 pt-4">
                                     <div class="d-flex justify-content-between">
                                         <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                        <h5 class="m-0"><?= $value['price'] ?></h5>
+                                        <h5 class="m-0"><?= $value['price'] ?>  VNĐ</h5>
                                     </div>
                                 </div>
                             </div>
