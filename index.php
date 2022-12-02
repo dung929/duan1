@@ -11,11 +11,11 @@ switch ($url) {
     case 'login':
         login();
         break;
+    case 'get_chart_data':
+        getChartData();
+        break;
     case 'register':
         register();
-        break;
-    case 'tao_register':
-        tao_register();
         break;
     case 'contact':
         contact();
