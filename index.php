@@ -17,6 +17,9 @@ switch ($url) {
     case 'register':
         register();
         break;
+    case 'tao_register':
+        tao_register();
+        break;
     case 'contact':
         contact();
         break;
