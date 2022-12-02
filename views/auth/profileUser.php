@@ -25,6 +25,114 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?url=home">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/duan1/index.php?url=home">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Trang Chủ</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/duan1/index.php?url=qltour_index">
+            <i class="fas fa-plane"></i>
+            <span>Lịch sử đặt tour</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Interface
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Components</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Custom Components:</h6>
+                <a class="collapse-item" href="buttons.html">Buttons</a>
+                <a class="collapse-item" href="cards.html">Cards</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Addons
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Login Screens:</h6>
+                <a class="collapse-item" href="auth/login.php">Login</a>
+                <a class="collapse-item" href="register.html">Register</a>
+                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                <div class="collapse-divider"></div>
+                <h6 class="collapse-header">Other Pages:</h6>
+                <a class="collapse-item" href="404.html">404 Page</a>
+                <a class="collapse-item" href="blank.html">Blank Page</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Charts</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tables</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+    <!-- Sidebar Message -->
+    <div class="sidebar-card d-none d-lg-flex">
+        <img class="sidebar-card-illustration mb-2" src="template/img/undraw_rocket.svg" alt="...">
+        <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
+        <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+    </div>
+
+</ul>
         <!-- End of Sidebar -->
 
         <div id="content-wrapper" class="d-flex flex-column">
@@ -233,8 +341,9 @@
                                 <div class="col-lg-4">
                                     <div class="card mb-4">
                                         <div class="card-body text-center">
-                                            <img src="<?= $value['image'] ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                                            <h5 class="my-3"><?= $value['name'] ?></h5>
+                                            <img src="template_client/img/destination-3.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                            <h5 class="my-3">Tuấn anh</h5>
+                                        </div>
                                     </div>
                                     <div class="card mb-4 mb-lg-0">
                                         <div class="card-body p-0">
@@ -268,10 +377,10 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-sm-3">
-                                                    <p class="mb-0">Full Name</p>
+                                                    <p class="mb-0">Tên đầy đủ</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">Johnatan Smith</p>
+                                                    <p class="text-muted mb-0">Tuấn Anh</p>
                                                 </div>
                                             </div>
                                             <hr>
@@ -280,13 +389,13 @@
                                                     <p class="mb-0">Email</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">example@example.com</p>
+                                                    <p class="text-muted mb-0">anhdt@fpt.edu.vn</p>
                                                 </div>
                                             </div>
                                             <hr>
                                             <div class="row">
                                                 <div class="col-sm-3">
-                                                    <p class="mb-0">Phone</p>
+                                                    <p class="mb-0">Số điện thoại</p>
                                                 </div>
                                                 <div class="col-sm-9">
                                                     <p class="text-muted mb-0">(097) 234-5678</p>
@@ -295,77 +404,10 @@
                                             <hr>
                                             <div class="row">
                                                 <div class="col-sm-3">
-                                                    <p class="mb-0">Mobile</p>
+                                                    <p class="mb-0">Địa chỉ</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">(098) 765-4321</p>
-                                                </div>
-                                            </div>
-                                            <hr>
-                                            <div class="row">
-                                                <div class="col-sm-3">
-                                                    <p class="mb-0">Address</p>
-                                                </div>
-                                                <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="card mb-4 mb-md-0">
-                                                <div class="card-body">
-                                                    <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-                                                    </p>
-                                                    <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                                                    <div class="progress rounded" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                                                    <div class="progress rounded" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                                                    <div class="progress rounded" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                                                    <div class="progress rounded" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                                                    <div class="progress rounded mb-2" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="card mb-4 mb-md-0">
-                                                <div class="card-body">
-                                                    <p class="mb-4"><span class="text-primary font-italic me-1">assigment</span> Project Status
-                                                    </p>
-                                                    <p class="mb-1" style="font-size: .77rem;">Web Design</p>
-                                                    <div class="progress rounded" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Website Markup</p>
-                                                    <div class="progress rounded" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <p class="mt-4 mb-1" style="font-size: .77rem;">One Page</p>
-                                                    <div class="progress rounded" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Mobile Template</p>
-                                                    <div class="progress rounded" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                    <p class="mt-4 mb-1" style="font-size: .77rem;">Backend API</p>
-                                                    <div class="progress rounded mb-2" style="height: 5px;">
-                                                        <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
+                                                    <p class="text-muted mb-0">Fpt Trịnh Văn Bô</p>
                                                 </div>
                                             </div>
                                         </div>
