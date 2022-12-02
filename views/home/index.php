@@ -84,7 +84,7 @@
                                 <img class="img-fluid" src="template_client/img/about-2.jpg" alt="">
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary mt-1">Đặt ngay</a>
+                        <a href="index.php?url=list_products" class="btn btn-primary mt-1">Đặt ngay</a>
                     </div>
                 </div>
             </div>

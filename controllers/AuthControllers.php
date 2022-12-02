@@ -1,5 +1,8 @@
 <?php
 require_once('models/Client.php');
+require_once('models/categories.php');
+require_once('models/products.php');
+require_once('models/blog.php');
 function login()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -30,6 +33,10 @@ function logout()
 }
 function register(){
     include_once './views/auth/register.php';
+}
+function profileUser(){
+    $client = getAllClient();
+    include_once './views/auth/profileUser.php';
 }
 function tao_register(){
     $tao_register = getTaoRegister();
