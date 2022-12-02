@@ -11,11 +11,11 @@ switch ($url) {
     case 'login':
         login();
         break;
+    case 'get_chart_data':
+        getChartData();
+        break;
     case 'register':
         register();
-        break;
-    case 'qluser':
-        qluser();
         break;
     case 'contact':
         contact();
