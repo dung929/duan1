@@ -56,7 +56,7 @@ switch ($url) {
     case 'travel':
         travel();
         break;
-    case 'detail_product':
+    case 'detail':
         $id = $_GET['id'];
         getDetail_productOne($id);
         break;

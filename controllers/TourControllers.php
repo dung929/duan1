@@ -11,7 +11,6 @@ function getDetail_productOne()
   $id = $_GET['id'];
   $details = getDetail_productOnecc($id);
   $products = getAllProducts();
-  $book_tour=getAllBook_tour();
   include_once './views/home/detail.php';
 }
 function dat_tour()
