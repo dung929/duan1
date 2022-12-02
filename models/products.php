@@ -11,12 +11,6 @@ function getAllProduct()
     $sql = "SELECT * FROM products";
     return getData($sql, FETCH_ALL);
 }
-function getAllBook_tour()
-{
-    $sql = "SELECT book_tour.* join products ON book_tour.id_tour = products.id";
-    return getData($sql, FETCH_ALL);
-}
-
 function getTaoBooking()
 {
     $date_dat_tour = $_POST['date_dat_tour'];
