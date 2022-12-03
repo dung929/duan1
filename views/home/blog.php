@@ -249,7 +249,7 @@
                         <h3 class="text-primary mb-3">Phúc Tử Vi</h3>
                         <p>Xin chào mọi người! Tôi là Phúc mọi người hay gọi tôi là Phúc Tử Vi...</p>
                         <div class="d-flex justify-content-center">
-                            <a class="text-primary px-2" href="">
+                            <a class="text-primary px-2" href="https://www.facebook.com/profile.php?id=100010976053920">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                             <a class="text-primary px-2" href="">
