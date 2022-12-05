@@ -37,3 +37,4 @@ function getTaoRegister()
     $sql = "INSERT INTO client (name,email,password,address,image,phone,username) VALUES ('$name','$email','$password_hashed','$address','$save','$phone','$username')";
     return getData($sql, NOT_FETCH);
 }
+
