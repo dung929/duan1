@@ -35,6 +35,7 @@ function register(){
     include_once './views/auth/register.php';
 }
 function profileUser(){
+    session_start();
     $client = getAllClient();
     include_once './views/auth/profileUser.php';
 }

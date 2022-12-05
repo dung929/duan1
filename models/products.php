@@ -37,7 +37,7 @@ function getTaoBooking()
 }
 function getBooking()
 {
-    $sql = "SELECT * FROM ql_booking ";
+    $sql = "SELECT * FROM ql_booking  ";
 
     return getData($sql, FETCH_ALL);
 }
