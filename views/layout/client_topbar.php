@@ -34,7 +34,7 @@ session_start();
                             <i class="fas fa-user"></i>
                         </a>
                     <?php } else if (isset($_SESSION['user'])) { ?>
-                       <a href="index.php?url=profileUser&id=<?= $client['id']?>"><?= $_SESSION['user']['name'] ?><img class="template/img-profile rounded-circle " src="template/img/undraw_profile.svg"></a> 
+                       <a href="index.php?url=profileUser&id=<?= $_SESSION['user']['id'] ?>"><?= $_SESSION['user']['name'] ?><img class="template/img-profile rounded-circle " src="template/img/undraw_profile.svg"></a> 
                         <a class="text-primary pl-3 pr-3" href="index.php?url=logout"><button onclick="return confirm('Bạn có muốn đăng xuất không ?')"> Đăng xuất</button></a>
                     <?php } ?>
                 </div>

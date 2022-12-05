@@ -67,7 +67,7 @@
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
+                                <form class="form-inline mr-auto w-100 navbar-search" method="POST" action="index.php?url=qltour_index">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
@@ -81,12 +81,6 @@
                         </li>
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
@@ -130,12 +124,6 @@
                         </li>
 
                         <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
@@ -230,7 +218,6 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Quản lí Khách Hàng</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
                     <!-- Content Row -->
@@ -245,6 +232,7 @@
                                     <th>Địa Chỉ</th>
                                     <th>Phone</th>
                                     <th>Ảnh</th>
+                                    <th>Đổi mật khẩu</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -256,6 +244,44 @@
                                         <td><?= $value['address'] ?></td>
                                         <td><?= $value['phone'] ?></td>
                                         <td><img src="<?=$value['image'] ?>" alt="" height="100"></td>
+                                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom:15px ;">
+                                                Đổi mật khẩu
+                                            </button>
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form method="POST" action="index.php?url=qluser_index">
+                                                            <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Nhập mật khẩu mới lần 1 :</label>
+                                                                    <input type="hidden" value="<?= $value['id'] ?>" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Nhập mật khẩu mới lần 1 :</label>
+                                                                    <input type="password" value="<? $value['password'] ?>" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                                </div>
+                                                                <!-- <div class="form-group">
+                                                                    <label for="exampleInputEmail1">Nhập mật khẩu mới lần 2 :</label>
+                                                                    <input type="password" class="form-control" name="password_2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                                </div> -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                                                    <button type="submit" class="btn btn-primary">Lưu</button>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
@@ -267,6 +293,7 @@
                                     <th>Địa Chỉ</th>
                                     <th>Phone</th>
                                     <th>Ảnh</th>
+                                    <th>Đổi mật khẩu</th>
                                 </tr>
                             </tfoot>
                         </table>
