@@ -18,7 +18,7 @@ function dat_tour()
   $client = getAllClient();
   $id = $_GET['id'];
   $details = getDetail_productOnecc($id);
-  $dat_tour  = getDattour($id);
+  $dat_tour = getDattour($id);
   include_once './views/home/dat_tour.php';
 }
 function contact_client()
