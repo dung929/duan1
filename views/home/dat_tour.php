@@ -302,7 +302,7 @@
         <div>
             <input type="text" placeholder="32589HJSD54" onchange="show()" id="sale">
             <span id="errors" style="color:red;"></span>
-            <p>(*) Sau khi nhập mã voucher, vui lòng nhấn vào nút sử dụng để mã có hiệu lực.</p>
+            <p>(*) Sau khi nhập mã voucher, mã sẽ có hiệu lực ngay lập tức!.</p>
         </div>
         <hr>
         <div class="tong">
@@ -312,14 +312,14 @@
         <h2>Phương thức thanh toán</h2>
         <div class="pay">
             <div>
-                <input type="radio" checked>Thanh toán tại quầy Du Lịch Việt
+                <input type="radio" name="check" checked>Thanh toán tại quầy Du Lịch Việt
                 <br>
-                <input type="radio">Thanh toán qua ví MOMO
+                <input type="radio" name="check" >Thanh toán qua ví MOMO
             </div>
             <div>
-                <input type="radio">Thanh toán chuyển khoản qua ngân hàng
+                <input type="radio" name="check" >Thanh toán chuyển khoản qua ngân hàng
                 <br>
-                <input type="radio">Thanh toán qua VNPAY
+                <input type="radio" name="check" >Thanh toán qua VNPAY
             </div>
         </div>
         <div class="submit_tour">

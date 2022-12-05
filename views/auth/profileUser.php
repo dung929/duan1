@@ -45,7 +45,7 @@
             <span>Trang Chủ</span></a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="/duan1/index.php?url=qltour_index">
+        <a class="nav-link" href="/duan1/index.php?url=submit_tour">
             <i class="fas fa-plane"></i>
             <span>Lịch sử đặt tour</span></a>
     </li>
@@ -317,7 +317,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="index.php?url=logout_user">
+                                <a class="dropdown-item" href="index.php?url=logout">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -341,8 +341,8 @@
                                 <div class="col-lg-4">
                                     <div class="card mb-4">
                                         <div class="card-body text-center">
-                                            <img src="template_client/img/destination-3.jpg" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
-                                            <h5 class="my-3">Tuấn anh</h5>
+                                            <img src="<?= $_SESSION['user']['image'] ?>" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                            <h5 class="my-3"><?= $_SESSION['user']['name'] ?></h5>
                                         </div>
                                     </div>
                                     <div class="card mb-4 mb-lg-0">
@@ -380,7 +380,7 @@
                                                     <p class="mb-0">Tên đầy đủ</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">Tuấn Anh</p>
+                                                    <p class="text-muted mb-0"><?= $_SESSION['user']['name'] ?></p>
                                                 </div>
                                             </div>
                                             <hr>
@@ -389,7 +389,7 @@
                                                     <p class="mb-0">Email</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">anhdt@fpt.edu.vn</p>
+                                                    <p class="text-muted mb-0"><?= $_SESSION['user']['email'] ?></p>
                                                 </div>
                                             </div>
                                             <hr>
@@ -398,7 +398,7 @@
                                                     <p class="mb-0">Số điện thoại</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">(097) 234-5678</p>
+                                                    <p class="text-muted mb-0"><?= $_SESSION['user']['phone'] ?></p>
                                                 </div>
                                             </div>
                                             <hr>
@@ -407,7 +407,7 @@
                                                     <p class="mb-0">Địa chỉ</p>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <p class="text-muted mb-0">Fpt Trịnh Văn Bô</p>
+                                                    <p class="text-muted mb-0"><?= $_SESSION['user']['address'] ?></p>
                                                 </div>
                                             </div>
                                         </div>

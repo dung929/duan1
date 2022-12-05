@@ -166,8 +166,6 @@
                         <hr>
                         <h3>Thời gian:<?= '  ' . $details['days'] . ' ngày' ?> <?= ' ' . $details['days'] . '  đêm' ?></h2>
                         <hr>
-                        <h3>Khởi hành:<?= ' ' . $details['time_start'] ?></h2>
-                        <hr>
                         <h3>Xuất phát: <?= $details['name_city'] ?></h2>
                     </div>
                     <div class="submit">
