@@ -37,4 +37,15 @@ function getTaoRegister()
     $sql = "INSERT INTO client (name,email,password,address,image,phone,username) VALUES ('$name','$email','$password_hashed','$address','$save','$phone','$username')";
     return getData($sql, NOT_FETCH);
 }
-
+function updatePassword(){
+    $password = $_POST['password'];
+    $id = $_POST['id'];
+    $errors = '';
+    if ($password == '') {
+        $errors = 'Mật khẩu  nhập lại không đúng !';
+        header("location:index.php?url=register&errors=$errors");
+    }
+    $password_hashed = password_hash($password, PASSWORD_BCRYPT);
+    $sql = "UPDATE client SET password='$password_hashed' where id=$id";
+    return getData($sql, NOT_FETCH);
+}
