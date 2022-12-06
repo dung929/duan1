@@ -1,8 +1,9 @@
 <?php
 require_once('models/categories.php');
 require_once('models/products.php');
-
+require_once('models/blog.php');
 function home(){
+    $blog = getAllBlog();
     $categories = getAllCategories();
     $products = getProductsTrending();
     include_once './views/home/index.php';
@@ -20,7 +21,6 @@ function list_products(){
     include_once './views/home/list_products.php';
 }
 function blog(){
-
     include_once './views/home/blog.php';
 }
 function about(){
@@ -28,9 +28,4 @@ function about(){
 }
 function contact(){
     include_once './views/home/contact.php';
-}
-
-function blogTrending(){
-    $blog = getAllBlog();
-    include_once './views/home/index.php';
 }

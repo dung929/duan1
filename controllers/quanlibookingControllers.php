@@ -19,6 +19,7 @@ function taoBooking()
 
 }
 function submit_tour(){
+    session_start();
     $submit_tour = getSubmittour();
-    include './views/backup/submit_tour.php';
+    include './views/auth/history_tour.php';
 }

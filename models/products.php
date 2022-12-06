@@ -6,22 +6,30 @@ function getAllProducts($search = '')
 
     return getData($sql, FETCH_ALL);
 }
-
+function getAllProduct()
+{
+    $sql = "SELECT * FROM products";
+    return getData($sql, FETCH_ALL);
+}
 function getTaoBooking()
 {
     $date_dat_tour = $_POST['date_dat_tour'];
     $name = $_POST['name'];
-    $treem = $_POST['treem'];
+    $treem1 = $_POST['treem1'];
+    $treem2 = $_POST['treem2'];
+    $treem3 = $_POST['treem3'];
     $nguoilon = $_POST['nguoilon'];
-    $sum_client =  $treem + $nguoilon;
+    $sum_client =  $treem1 + $nguoilon + $treem2 + $treem3;
     $name_guide = $_POST['guide'];
     $name_coach = $_POST['coach'];
     $name_hotel = $_POST['hotel'];
     $name_cate = $_POST['cate'];
     $price = $_POST['price'];
     $id_client = $_POST['id_client'];
-    $sale = 0.75;
-    $sum = $treem * $price * $sale + $nguoilon * $price;
+    $sale1 = 0.45;
+    $sale2 = 0.25;
+    $sale3 = 0.05;
+    $sum = $treem1 * $price * $sale1 + $nguoilon * $price + $treem2 * $price * $sale2 + $treem3 * $price * $sale3;
     $sql = "INSERT INTO ql_booking  "
         . "(time_booktour,name_tour,number_client,guide_tour,coach_tour,hotel_tour,category_name,sum_tour,name_client)"
         . " VALUES ('$date_dat_tour','$name','$sum_client','$name_guide','$name_coach','$name_hotel','$name_cate','$sum','$id_client')";
@@ -29,7 +37,7 @@ function getTaoBooking()
 }
 function getBooking()
 {
-    $sql = "SELECT * FROM ql_booking ";
+    $sql = "SELECT * FROM ql_booking  ";
 
     return getData($sql, FETCH_ALL);
 }
@@ -54,7 +62,7 @@ function getTravel()
 }
 function getDetail_productOnecc($id)
 {
-    $sql = "SELECT products.id,price,number,products.name,categories.name AS tendm,content,schedule,image,time_start,book_tour.id as tour_id,city.name as name_city, coach.name AS tenpt,hotel.name AS tenks, tour_guide.name AS tennv FROM products 
+    $sql = "SELECT products.id,price,number,products.name,categories.name AS tendm,content,schedule,image,time_start,days,time_end,book_tour.id as tour_id,city.name as name_city, coach.name AS tenpt,hotel.name AS tenks, tour_guide.name AS tennv FROM products 
     JOIN book_tour ON book_tour.id_tour=products.id 
     JOIN categories ON categories.id =products.category_id
     JOIN detail ON detail.id_products=products.id 
@@ -107,30 +115,31 @@ function getProductsTrending()
     $sql = "SELECT products.*, categories.name as category_name FROM products left join categories ON  products.category_id = categories.id where products.is_trending = 1 ";
     return getData($sql, FETCH_ALL);
 }
-function listProducts($search = '', $time_start = '', $time_end = '', $days = '',  $category = '' ){
+function listProducts($search = '', $time_start = '', $time_end = '', $days = '',  $category = '')
+{
     $sql = "SELECT products.*, categories.name as category_name FROM products left join categories ON  products.category_id = categories.id";
-    if ($search || $time_start || $time_end || $days || $category){
+    if ($search || $time_start || $time_end || $days || $category) {
         $sql .= ' where ';
     }
     $and = '';
-    if ($search){
+    if ($search) {
         $sql .= "products.name Like '%$search%'";
         $and = ' and ';
     }
-     if ($time_start){
+    if ($time_start) {
         $sql .= "{$and}products.time_start <= '$time_start'";
         $and = ' and ';
-     }
-     if ($time_end){
+    }
+    if ($time_end) {
         $sql .= "{$and}products.time_end >= '$time_end'";
         $and = ' and ';
-     }
-     if ($days){
+    }
+    if ($days) {
         $sql .= "{$and}products.days = $days";
         $and = ' and ';
-     }
-     if ($category){
+    }
+    if ($category) {
         $sql .= "{$and}products.category_id = $category";
-     }
+    }
     return getData($sql, FETCH_ALL);
 }
