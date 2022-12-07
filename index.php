@@ -6,16 +6,23 @@ require_once 'Controllers/quanlibookingControllers.php';
 require_once 'Controllers/quanliuserControllers.php';
 require_once 'Controllers/TourControllers.php';
 require_once 'Controllers/HomeControllers.php';
+require_once 'Controllers/quanlycategory.php';
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case 'login':
         login();
         break;
+    case 'profileUser':
+        profileUser();
+        break;
+    case 'get_chart_data':
+        getChartData();
+        break;
     case 'register':
         register();
         break;
-    case 'qluser':
-        qluser();
+    case 'tao_register':
+        tao_register();
         break;
     case 'contact':
         contact();
@@ -53,10 +60,13 @@ switch ($url) {
     case 'qltour_index':
         quanlitour();
         break;
+    case 'qlcate_index':
+        quanlicategory();
+        break;
     case 'travel':
         travel();
         break;
-    case 'detail_product':
+    case 'detail':
         $id = $_GET['id'];
         getDetail_productOne($id);
         break;

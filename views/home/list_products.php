@@ -72,17 +72,17 @@
                 <?php foreach ($products as $key => $value) : ?>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="package-item bg-white mb-2">
-                            <img class="img-fluid" src="template_client/img/package-1.jpg" alt="">
+                            <img class="img-fluid" src="<?='template_client/img/'. $value['image'] ?>" alt="">
                             <div class="p-4">
                                 <div class="d-flex justify-content-between mb-3">
-                                    <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $value['name'] ?></small>
-                                    <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i><?= $value['days'] ?></small>
+                                    <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $value['schedule'] ?></small>
+                                    <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i><?= $value['days'] ?>  Ngày</small>
                                 </div>
-                                <a class="h5 text-decoration-none" href=""><?= $value['content'] ?></a>
+                                <a class="h5 text-decoration-none" href="index.php?url=detail&id=<?= $value['id']?>"><?= $value['name'] ?></a>
                                 <div class="border-top mt-4 pt-4">
                                     <div class="d-flex justify-content-between">
                                         <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                        <h5 class="m-0"><?= $value['price'] ?></h5>
+                                        <h5 class="m-0"><?= $value['price'] ?>   VNĐ</h5>
                                     </div>
                                 </div>
                             </div>

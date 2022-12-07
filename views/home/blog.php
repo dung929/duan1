@@ -244,7 +244,32 @@
     
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <!-- Author Bio -->
+<<<<<<< HEAD
                 
+=======
+                    <div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4">
+                        <img src="template_client/img/phuctuvi.jpg" class="img-fluid mx-auto mb-3" style="width: 100px;">
+                        <h3 class="text-primary mb-3">Phúc Tử Vi</h3>
+                        <p>Xin chào mọi người! Tôi là Phúc mọi người hay gọi tôi là Phúc Tử Vi...</p>
+                        <div class="d-flex justify-content-center">
+                            <a class="text-primary px-2" href="https://www.facebook.com/profile.php?id=100010976053920">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-primary px-2" href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="text-primary px-2" href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="text-primary px-2" href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="text-primary px-2" href="">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+>>>>>>> 3af50189028a3ebe98d14954a0f7bb9f7d345c67
     
                     <!-- Search Form -->
                  

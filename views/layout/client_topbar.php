@@ -13,13 +13,32 @@ session_start();
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
+<<<<<<< HEAD
+=======
+                    <a class="text-primary px-3" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-primary px-3" href="https://github.com/dung929/duan1.git">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="text-primary px-3" href="https://trello.com/b/GxxN9aah/fa22pro1014we17312nhom11qltour">
+                        <i class="fab fa-trello"></i>
+                    </a>
+                    <a class="text-primary px-3" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-primary pl-3 pr-3" href="">
+                        <i class="fab fa-soundcloud"></i>
+                    </a>
+>>>>>>> 3af50189028a3ebe98d14954a0f7bb9f7d345c67
                     <?php
                     if (!isset($_SESSION['user'])) { ?>
                         <a class="text-primary pl-3" href="index.php?url=login">
                             <i class="fas fa-user"></i>
                         </a>
                     <?php } else if (isset($_SESSION['user'])) { ?>
-                        <?= $_SESSION['user']['name'] ?></i>
+                       <a href="index.php?url=profileUser&id=<?= $_SESSION['user']['id']?>"><?= $_SESSION['user']['name'] ?><img style="width:70px;" class="template/img-profile rounded-circle " src="<?= $_SESSION['user']['image'] ?>"></a> 
+
                         <a class="text-primary pl-3 pr-3" href="index.php?url=logout"><button onclick="return confirm('Bạn có muốn đăng xuất không ?')"> Đăng xuất</button></a>
                     <?php } ?>
                 </div>
