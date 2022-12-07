@@ -5,6 +5,10 @@
                     <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
                 </a>
                 <p>Chào mừng các bạn đã đến với VIVU TOUR, hãy tương tắc với chúng tôi qua các phần mô tả bên dưới!</p>
+<<<<<<< HEAD
+                <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
+               
+=======
                 <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Theo dõi chúng tôi</h6>
                 <div class="d-flex justify-content-start">
                     <a class="btn btn-outline-primary btn-square mr-2" href="https://github.com/dung929/duan1.git"><i class="fab fa-github"></i></a>
@@ -12,6 +16,7 @@
                     <a class="btn btn-outline-primary btn-square mr-2" href="https://trello.com/b/GxxN9aah/fa22pro1014we17312nhom11qltour"><i class="fab fa-trello"></i></a>
                     <a class="btn btn-outline-primary btn-square" href="https://www.youtube.com/watch?v=FkZ8ruz8ozg"><i class="fab fa-soundcloud"></i></a>
                 </div>
+>>>>>>> 3af50189028a3ebe98d14954a0f7bb9f7d345c67
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Dịch vụ của chúng tôi</h5>
