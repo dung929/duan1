@@ -12,6 +12,10 @@ function  quanlibooking()
         include_once './views/admin/quanlibooking.php';
     }
 }
+function updateStatus(){
+    $update = updateStatusBooking($_POST['id'], $_POST['status']);
+    header("location: index.php?url=qlbooking_index");
+}
 function taoBooking()
 {
     $taobooking = getTaoBooking();

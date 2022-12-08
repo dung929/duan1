@@ -35,6 +35,10 @@ function getTaoBooking()
         . " VALUES ('$date_dat_tour','$name','$sum_client','$name_guide','$name_coach','$name_hotel','$name_cate','$sum','$id_client')";
     return getData($sql, NOT_FETCH);
 }
+function updateStatusBooking($id , $status){
+    $sql = " UPDATE ql_booking SET status='$status' where id=$id ";
+    return getData($sql, NOT_FETCH);
+}
 function getBooking()
 {
     $sql = "SELECT * FROM ql_booking  ";
