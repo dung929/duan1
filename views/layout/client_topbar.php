@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() != PHP_SESSION_ACTIVE) {
+    session_start();
+}
 ?>
 <div class="container-fluid bg-light pt-3 d-none d-lg-block">
     <div class="container">

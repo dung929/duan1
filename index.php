@@ -12,6 +12,9 @@ switch ($url) {
     case 'login':
         login();
         break;
+    case '403':
+        loi();
+        break;
     case 'profileUser':
         profileUser();
         break;

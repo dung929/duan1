@@ -8,7 +8,12 @@ function travel()
 }
 function getDetail_productOne()
 {
+  session_start();
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $taocomment = taoCommentProducts();
+  }
   $id = $_GET['id'];
+  $comment = getCommentProduct($id);
   $details = getDetail_productOnecc($id);
   $products = getAllProducts();
   include_once './views/home/detail.php';

@@ -147,3 +147,17 @@ function listProducts($search = '', $time_start = '', $time_end = '', $days = ''
     }
     return getData($sql, FETCH_ALL);
 }
+function getCommentProduct($productId){
+    $sql = "SELECT comment.*, client.name as client_name, client.image as client_image FROM comment left join client ON  comment.client_id = client.id where comment.product_id = $productId ";
+    return getData($sql, FETCH_ALL);
+}
+function taoCommentProducts(){
+    $content = isset($_POST['content']) ? $_POST['content'] : '';
+    $productId = isset($_POST['productId']) ? $_POST['productId'] : '';
+    $clientId = isset($_SESSION['user']) ? $_SESSION['user']['id'] : '';
+    $date = date('Y-m-d H:i:s');
+    $sql = "INSERT INTO comment  "
+        . "(content,product_id,client_id,time)"
+        . " VALUES ('$content', '$productId', '$clientId', '$date')";
+    return getData($sql, NOT_FETCH);
+}
