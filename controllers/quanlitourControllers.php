@@ -20,5 +20,14 @@ function  quanlitour()
 }
 function taotour()
 {
-    $taotour = createTour();
+    session_start();
+    if (!isset($_SESSION['user_admin'])) {
+        $errors = 'Vui lòng đăng nhập để sử dụng';
+        header("location: index.php?url=login_user&errors=$errors");
+    } else if (isset($_SESSION['user_admin'])) {
+        $taotour = createTour();
+        $products = getAllProducts();
+        $categories = getAllCategories();
+        include_once './views/admin/quanlitour.php';
+    }
 }

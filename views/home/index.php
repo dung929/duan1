@@ -202,17 +202,17 @@
                 <?php foreach ($products as $key => $value) : ?>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="package-item bg-white mb-2">
-                            <img class="img-fluid" src="<?='template_client/img/'. $value['image'] ?>" alt="">
+                            <img class="img-fluid" src="<?= $value['image'] ?>" alt="">
                             <div class="p-4">
                                 <div class="d-flex justify-content-between mb-3">
                                     <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i><?= $value['schedule'] ?></small>
-                                    <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i><?= $value['days'] ?>  Ngày</small>
+                                    <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i><?= $value['days'] ?> Ngày</small>
                                 </div>
-                                <a class="h5 text-decoration-none" href="index.php?url=detail&id=<?= $value['id']?>"><?= $value['name'] ?></a>
+                                <a class="h5 text-decoration-none" href="index.php?url=detail&id=<?= $value['id'] ?>"><?= $value['name'] ?></a>
                                 <div class="border-top mt-4 pt-4">
                                     <div class="d-flex justify-content-between">
                                         <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
-                                       <h5 class="m-0"><?= $value['price'] ?>  VNĐ</h5>
+                                        <h5 class="m-0"><?= $value['price'] ?> VNĐ</h5>
                                     </div>
                                 </div>
                             </div>
@@ -238,54 +238,25 @@
                 <h1>Hướng dẫn du lịch của chúng tôi</h1>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="template_client/img/team-1.jpg" alt="">
-                        
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Adam</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="template_client/img/team-2.jpg" alt="">
-                           
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">Happy</h5>
-                            <p class="m-0">Designation</p>
+                <?php foreach ($guide as $key => $value) : ?>
+                    <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
+                        <div class="team-item bg-white mb-4">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="<?= 'template_client/img/' . $value['image'] ?>" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <h5 class="text-truncate"><?= $value['name'] ?></h5>
+                                <p class="m-0"><?= $value['experience'] ?></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="template_client/img/team-3.jpg" alt="">
-                            
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">lee go</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="template_client/img/team-4.jpg" alt="">
-                            
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">hwoang hee</h5>
-                            <p class="m-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
@@ -351,7 +322,7 @@
             </div>
             <div class="row pb-3">
                 <?php foreach ($blog as $key => $value) : ?>
-                    <div class="col-lg-4 col-md-6 mb-4 pb-2">   
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
                         <div class="blog-item">
                             <div class="position-relative">
                                 <img class="img-fluid w-100" src="<?= 'template_client/img/' . $value['image']  ?>" alt="">

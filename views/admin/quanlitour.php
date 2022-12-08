@@ -238,30 +238,28 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="index.php?url=qltour_index">
-                                                <div class="form-group">
+                                            <form method="POST" action="index.php?url=taotour" enctype="multipart/form-data">                            <div class="form-group">
                                                     <label for="exampleInputEmail1">Tên:</label>
-                                                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Giá:</label>
-                                                    <input type="text" class="form-control" name="price" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="number" class="form-control" name="price" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""  required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Thời gian bắt đầu:</label>
-                                                    <input type="date" class="form-control" name="time_start" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="date" class="form-control" name="time_start" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""  required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Thời gian kết thúc:</label>
-                                                    <input type="date" class="form-control" name="time_end" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="date" class="form-control" name="time_end" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=""  required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Nội dung:</label>
-                                                    <input type="text" class="form-control" name="content" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Ảnh:</label>
-                                                    <input type="file" class="form-control" name="image" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="file" class="form-control" name="image" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" require>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Danh mục:</label>
@@ -320,8 +318,8 @@
                                                 <td><?= $value['price'] ?></td>
                                                 <td><?= $value['time_start'] ?></td>
                                                 <td><?= $value['time_end'] ?></td>
-                                                <td><?= $value['content'] ?></td>
-                                                <td><img src="<?=$value['image'] ?>" alt="" height="100"></td>
+                                                <td><?= $value['content'] ?></td>    
+                                                <td><img src="<?= $value['image'] ?>" alt="" height="100"></td>
                                                 <td><?= $value['category_name'] ?></td>
                                                 <td><a href="">Sửa</a></td>
                                             </tr>

@@ -2,10 +2,13 @@
 require_once('models/categories.php');
 require_once('models/products.php');
 require_once('models/blog.php');
+require_once('models/tour_guide.php');
 function home(){
     $blog = getAllBlog();
     $categories = getAllCategories();
     $products = getProductsTrending();
+    $guide =  getAllGuide();
+    session_start();
     include_once './views/home/index.php';
 }
 function detail(){
@@ -22,10 +25,13 @@ function list_products(){
 }
 function blog(){
     include_once './views/home/blog.php';
+    session_start();
 }
 function about(){
     include_once './views/home/about.php';
+    session_start();
 }
 function contact(){
     include_once './views/home/contact.php';
+    session_start();
 }
