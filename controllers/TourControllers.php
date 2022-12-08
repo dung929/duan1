@@ -8,6 +8,7 @@ function travel()
 }
 function getDetail_productOne()
 {
+  session_start();
   $id = $_GET['id'];
   $details = getDetail_productOnecc($id);
   $products = getAllProducts();
@@ -15,11 +16,17 @@ function getDetail_productOne()
 }
 function dat_tour()
 {
-  $client = getAllClient();
-  $id = $_GET['id'];
-  $details = getDetail_productOnecc($id);
-  $dat_tour = getDattour($id);
-  include_once './views/home/dat_tour.php';
+  session_start();
+  if (!isset($_SESSION['user'])) {
+    $errors = 'Vui lòng đăng nhập để sử dụng';
+    header("location: index.php?url=login&errors=$errors");
+  } else if (isset($_SESSION['user'])) {
+    $client = getAllClient();
+    $id = $_GET['id'];
+    $details = getDetail_productOnecc($id);
+    $dat_tour = getDattour($id);
+    include_once './views/home/dat_tour.php';
+  }
 }
 function contact_client()
 {

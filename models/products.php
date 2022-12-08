@@ -93,11 +93,13 @@ function createTour()
     $time_start = isset($_POST['time_start']) ? $_POST['time_start'] : '';
     $time_end = isset($_POST['time_end']) ? $_POST['time_end'] : '';
     $content = isset($_POST['content']) ? $_POST['content'] : '';
-    $image = isset($_POST['image']) ? $_POST['image'] : '';
+    $image = $_FILES['image'];
+    $save = 'template_client/img/' . basename($image['name']);
+    move_uploaded_file($image['tmp_name'], $save);
     $category = isset($_POST['category_id']) ? $_POST['category_id'] : '';
     $sql = "INSERT INTO products  "
         . "(name, price, time_start, time_end, content, image, category_id)"
-        . " VALUES ('$name', '$price', '$time_start', '$time_end', '$content', '$image', '$category')";
+        . " VALUES ('$name', '$price', '$time_start', '$time_end', '$content', '$save', '$category')";
     return getData($sql, NOT_FETCH);
 }
 function getContact_client()

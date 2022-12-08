@@ -194,7 +194,7 @@
         <div class="flex">
             <div>
                 <div class="img_detail">
-                    <img src="<?= 'template_client/img/' . $details['image'] ?>" alt="">
+                    <img src="<?= $details['image'] ?>" alt="">
                 </div>
             </div>
             <div>
@@ -365,10 +365,10 @@
     function show() {
         var sum = document.getElementById('sum');
         if (sale.value == '123') {
-            errors.innerText = '*Sử dụng mã giảm giá thành công!';
+            errors.innerText = '*Sử dụng mã giảm giá thành công!-Bạn được giảm 500000 VNĐ';
             sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100 - 500000;
         } else if (sale.value == 'abc') {
-            errors.innerText = '*Sử dụng mã giảm giá thành công!';
+            errors.innerText = '*Sử dụng mã giảm giá thành công!-Bạn được giảm 1000000 VNĐ';
             sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100 - 1000000;
         } else if ((parseInt(nguoilon.value) + parseInt(treem1.value) + parseInt(treem2.value) + parseInt(treem3.value)) > parseInt(number.value)) {
             nguoilon.value='1';

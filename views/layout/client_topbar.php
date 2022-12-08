@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <div class="container-fluid bg-light pt-3 d-none d-lg-block">
     <div class="container">
         <div class="row">

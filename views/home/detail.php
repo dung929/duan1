@@ -148,7 +148,7 @@
             <div class="flex">
                 <div>
                     <div class="img_detail">
-                        <img src="<?= 'template_client/img/' . $details['image'] ?>" alt="">
+                        <img src="<?= $details['image'] ?>" alt="">
                     </div>
                     <div class="p">
                         <h2>Điểm nhấn hành trình</h2>
