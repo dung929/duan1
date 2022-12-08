@@ -12,8 +12,14 @@ switch ($url) {
     case 'login':
         login();
         break;
+    case '403':
+        loi();
+        break;
     case 'profileUser':
         profileUser();
+        break;
+    case 'updateStatus':
+        updateStatus();
         break;
     case 'get_chart_data':
         getChartData();
