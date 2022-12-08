@@ -238,7 +238,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="index.php?url=taotour">
+                                            <form method="POST" action="index.php?url=qltour_index">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Tên:</label>
                                                     <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
@@ -321,7 +321,7 @@
                                                 <td><?= $value['time_start'] ?></td>
                                                 <td><?= $value['time_end'] ?></td>
                                                 <td><?= $value['content'] ?></td>
-                                                <td><img src="<?='template_client/img/'. $value['image'] ?>" alt="" height="100"></td>
+                                                <td><img src="<?=$value['image'] ?>" alt="" height="100"></td>
                                                 <td><?= $value['category_name'] ?></td>
                                                 <td><a href="">Sửa</a></td>
                                             </tr>

@@ -236,7 +236,7 @@
                                     <th>Danh mục</th>
                                     <th>Tổng tiền</th>
                                     <th>Trạng thái</th>
-                                    <th>Thao tác</th>
+                                    <th style="width: 250px;">Thao tác</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -267,43 +267,42 @@
                                         <td><?= $value['category_name'] ?></td>
                                         <td><?= $value['sum_tour'] ?>$</td>
                                         <td>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom:15px ;">
-                                                Xác nhận
-                                            </button>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom:15px ;">
-                                                Hủy
-                                            </button>
+                                            <?php
+                                            if ($value['status'] == 'Chờ xác nhận') {
+                                                echo '<span class="badge badge-warning">' . $value['status'] . '</span>';
+                                            } else if ($value['status'] == 'Đã xác nhận') {
+                                                echo '<span class="badge badge-primary">' . $value['status'] . '</span>';
+                                            } else if ($value['status'] == 'Đã thanh toán') {
+                                                echo '<span class="badge badge-success">' . $value['status'] . '</span>';
+                                            } else if ($value['status'] == 'Đã checkin') {
+                                                echo '<span class="badge badge-info">' . $value['status'] . '</span>';
+                                            } else if ($value['status'] == 'Đã checkout') {
+                                                echo '<span class="badge badge-secondary">' . $value['status'] . '</span>';
+                                            } else if ($value['status'] == 'Hủy') {
+                                                echo '<span class="badge badge-danger">' . $value['status'] . '</span>';
+                                            }
+                                            ?>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom:15px ;">
-                                                Sửa
-                                            </button>
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form method="POST" action="index.php?url=taotour">
-                                                                <div class="form-group">
-                                                                    <label for="exampleInputEmail1">Tên:</label>
-                                                                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                                                    <button type="submit" class="btn btn-primary">Lưu</button>
-                                                                </div>
-                                                            </form>
-
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <form action="index.php?url=updateStatus" method="POST">
+                                                <?php
+                                                if ($value['status'] == 'Chờ xác nhận') {
+                                                    echo '<input name="id" type="hidden" value="'.$value['id'].'"><input name="status" type="hidden" value="Đã xác nhận"> <button type="submit" class="btn btn-primary">Xác nhận</button> ';
+                                                } else if ($value['status'] == 'Đã xác nhận') {
+                                                    echo '<input name="id" type="hidden" value="'.$value['id'].'"><input name="status" type="hidden" value="Đã thanh toán"><button type="submit" class="btn btn-success">Đã thanh toán</button> ';
+                                                } else if ($value['status'] == 'Đã thanh toán') {
+                                                    echo '<input name="id" type="hidden" value="'.$value['id'].'"><input name="status" type="hidden" value="Đã checkin"><button type="submit" class="btn btn-info">Checkin</button> ';
+                                                } else if ($value['status'] == 'Đã checkin') {
+                                                    echo '<input name="id" type="hidden" value="'.$value['id'].'"><input name="status" type="hidden" value="Đã checkout"><button type="submit" class="btn btn-secondary">checkout</button> ';
+                                                }
+                                                ?>
+                                                <button type="button" class="btn btn-primary">
+                                                    Sửa
+                                                </button>
+                                                <button type="button" class="btn btn-danger">
+                                                    Hủy
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
