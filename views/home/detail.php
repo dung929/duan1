@@ -18,19 +18,8 @@
 
     <!-- Booking Start -->
     <div class="container">
-        <h2 class="name_detail"><?= $details['name'] ?></h2>
         <form action="index.php?url=dat_tour&id=<?php echo $details['id'] ?>" method="POST">
             <div class="flex">
-                <div>
-                    <div class="img_detail">
-                        <img src="<?= $details['image'] ?>" alt="">
-                    </div>
-                    <div class="p">
-                        <h2>Điểm nhấn hành trình</h2>
-                        <hr>
-                        <p><?= $details['content'] ?></p>
-                    </div>
-                </div>
                 <div class="carousel-item">
                     <img class="w-100" src="template_client/img/carousel-2.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -42,24 +31,13 @@
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-prev-icon mb-n2"></span>
-                </div>
-            </a>
-            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
-                <div class="btn btn-dark" style="width: 45px; height: 45px;">
-                    <span class="carousel-control-next-icon mb-n2"></span>
-                </div>
-            </a>
-        </div>
+        </form>
     </div>
     <!-- Carousel End -->
 
 
     <!-- Booking Start -->
 
-    <?php include_once './views/layout/client_booking.php'; ?>
     <!-- Booking End -->
 
     <!-- Blog Start -->
@@ -84,46 +62,36 @@
                                     <h2 class="name_detail"><?= $details['name'] ?></h2>
                                 </a>
                             </div>
-                            <h2 class="mb-3"><?= $details['content'] ?></h2>
-                            <p>Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut
-                                magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet
-                                amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at
-                                sanctus et. Ipsum sit gubergren dolores et, consetetur justo invidunt at et
-                                aliquyam ut et vero clita. Diam sea sea no sed dolores diam nonumy, gubergren
-                                sit stet no diam kasd vero.</p>
+                            <p class="mb-3"><?= $details['content'] ?></p>
                         </div>
                     </div>
                     <!-- Blog Detail End -->
 
                     <!-- Comment List Start -->
                     <?php foreach ($comment as $key => $value) : ?>
-                    <div class="bg-white" style="padding: 30px; margin-bottom: 30px;">
-                        <div class="media mb-4">
-                            <img src="<?= $value['client_image'] ?>" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                            <div class="media-body">
-                                <h6><a href=""><?= $value['client_name'] ?></a> <small><i><?= $value['time'] ?></i></small></h6>
-                                <p><?= $value['content'] ?></p>
+                        <div class="bg-white" style="padding: 30px; margin-bottom: 30px;">
+                            <div class="media mb-4">
+                                <img src="<?= $value['client_image'] ?>" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+                                <div class="media-body">
+                                    <h6><a href=""><?= $value['client_name'] ?></a> <small><i><?= $value['time'] ?></i></small></h6>
+                                    <p><?= $value['content'] ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     <?php endforeach ?>
-                    <!-- Comment List End -->
-
-                    <!-- Comment Form Start -->
                     <div class="bg-white mb-3" style="padding: 30px;">
                         <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Comment</h4>
                         <form method="POST" action="index.php?url=detail&id=<?= $details['id'] ?>">
                             <div class="form-group">
                                 <label for="message">Comment</label>
-                                <input type="hidden" name="productId" value="<?=$details['id'] ?>">
-                                <textarea id="message" name ="content" cols="30" rows="5" class="form-control"></textarea>
+                                <input type="hidden" name="productId" value="<?= $details['id'] ?>">
+                                <textarea id="message" name="content" cols="30" rows="5" class="form-control"></textarea>
                             </div>
                             <div class="form-group mb-0">
-                                <input type="submit" value="Gửi" class="btn btn-primary font-weight-semi-bold py-2 px-3">
+                                <button class="btn btn-primary font-weight-semi-bold py-2 px-3">Gửi bình luận</button>
                             </div>
                         </form>
                     </div>
-                    <!-- Comment Form End -->
                 </div>
 
                 <div class="col-lg-4 mt-5 mt-lg-0">

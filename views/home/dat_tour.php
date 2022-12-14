@@ -47,6 +47,10 @@
             margin-bottom: 30px;
             border-radius: 8px;
         }
+        .img_detail img{
+            display: block;
+            width: 600px;
+        }
 
         .detail h2 {
             font-size: 25px;
@@ -209,9 +213,7 @@
                     <hr>
                     <h4>Thời gian:<?= '  ' . $details['days'] . ' ngày' ?> <?= ' ' . $details['days'] . '  đêm' ?></h3>
                         <hr>
-                        <h4>Khởi hành:<?= ' ' . $details['time_start'] ?></h2>
-                            <hr>
-                            <h4>Xuất phát: <?= $details['name_city'] ?></h4>
+                        <h4>Xuất phát: <?= $details['name_city'] ?></h4>
                 </div>
             </div>
         </div>
@@ -271,19 +273,15 @@
                     </div>
                     <div>
                         <h4>Trẻ em(5 - 11 tuổi):</h4>
-                        <input type="number" value="0" onchange="show()" id="treem1" name="treem1">
+                        <input type="number" value="0" onchange="show()" id="treem1" name="treem1" min=0>
                     </div>
                     <div>
                         <h4>Trẻ nhỏ(2 - 5 tuổi):</h4>
-                        <input type="number" value="0" onchange="show()" id="treem2" name="treem2">
+                        <input type="number" value="0" onchange="show()" id="treem2" name="treem2" min=0>
                     </div>
                     <div>
                         <h4>Sơ sinh(nhỏ hơn 2 tuổi):</h4>
-                        <input type="number" value="0" onchange="show()" id="treem3" name="treem3">
-                    </div>
-                    <div>
-                        <h4>Ngày đặt tour:</h4>
-                        <input type="date" name="date_dat_tour">
+                        <input type="number" value="0" onchange="show()" id="treem3" name="treem3" min=0>
                     </div>
                     <div>
                         <input type="hidden" id="price" name="" class="bg-neutral-700" onchange="show()" value="<?= $dat_tour['price'] ?>" disabled>
@@ -293,14 +291,16 @@
                         <input type="hidden" name="cate" value="<?= $dat_tour['tendm'] ?>">
                         <input type="hidden" name="price" value="<?= $dat_tour['price'] ?>">
                         <input type="hidden" name="name" value="<?= $dat_tour['name'] ?>">
-                        <input type="hidden" name="id_client" value=" <?= $_SESSION['user']['name'] ?>">
+                        <input type="hidden" name="id" value="<?= $dat_tour['id'] ?>">
+                        <input type="hidden" name="name_client" value=" <?= $_SESSION['user']['name'] ?>">
+                        <input type="hidden" name="id_client" value=" <?= $_SESSION['user']['id'] ?>">
                     </div>
             </div>
         </div>
         <hr>
         <h3>Mã giảm giá</h3>
         <div>
-            <input type="text" placeholder="32589HJSD54" onchange="show()" id="sale">
+            <input type="text" placeholder="32589HJSD54" onchange="show()" id="sale" name="ma_sale">
             <span id="errors" style="color:red;"></span>
             <p>(*) Sau khi nhập mã voucher, mã sẽ có hiệu lực ngay lập tức!.</p>
         </div>
@@ -313,42 +313,34 @@
         <div class="pay">
             <div>
                 <input type="radio" name="check" checked>Thanh toán tại quầy Du Lịch Việt
-                <br>
-                <input type="radio" name="check" >Thanh toán qua ví MOMO
             </div>
-            <div>
-                <input type="radio" name="check" >Thanh toán chuyển khoản qua ngân hàng
-                <br>
-                <input type="radio" name="check" >Thanh toán qua VNPAY
+            <div class="submit_tour">
+                <button>Hoàn thành</button>
             </div>
+            </form>
         </div>
-        <div class="submit_tour">
-            <button>Hoàn thành</button>
-        </div>
-        </form>
-    </div>
-    <!-- Book -->
-    <?php include_once './views/layout/client_footer.php'; ?>
+        <!-- Book -->
+        <?php include_once './views/layout/client_footer.php'; ?>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="template_client/lib/easing/easing.min.js"></script>
-    <script src="template_client/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="template_client/lib/tempusdominus/js/moment.min.js"></script>
-    <script src="template_client/lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="template_client/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="template_client/lib/easing/easing.min.js"></script>
+        <script src="template_client/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="template_client/lib/tempusdominus/js/moment.min.js"></script>
+        <script src="template_client/lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="template_client/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Contact Javascript File -->
-    <script src="template_client/mail/jqBootstrapValidation.min.js"></script>
-    <script src="template_client/mail/contact.js"></script>
+        <!-- Contact Javascript File -->
+        <script src="template_client/mail/jqBootstrapValidation.min.js"></script>
+        <script src="template_client/mail/contact.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="template_client/js/main.js"></script>
+        <!-- Template Javascript -->
+        <script src="template_client/js/main.js"></script>
 </body>
 
 </html>
@@ -364,18 +356,48 @@
 
     function show() {
         var sum = document.getElementById('sum');
-        if (sale.value == '123') {
+        if ((sale.value == '123') && ((parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100 - 500000) < 0)) {
+            nguoilon.value = '1';
+            treem1.value = '0';
+            treem2.value = '0';
+            treem3.value = '0';
+            alert('Vui lòng nhập số người lớn hơn 0');
+        } else if (sale.value == '123') {
             errors.innerText = '*Sử dụng mã giảm giá thành công!-Bạn được giảm 500000 VNĐ';
             sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100 - 500000;
+        } else if ((sale.value == 'abc') && ((parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100 - 100000) < 0)) {
+            nguoilon.value = '1';
+            treem1.value = '0';
+            treem2.value = '0';
+            treem3.value = '0';
+            alert('Vui lòng nhập số người lớn hơn 0');
         } else if (sale.value == 'abc') {
             errors.innerText = '*Sử dụng mã giảm giá thành công!-Bạn được giảm 1000000 VNĐ';
             sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100 - 1000000;
         } else if ((parseInt(nguoilon.value) + parseInt(treem1.value) + parseInt(treem2.value) + parseInt(treem3.value)) > parseInt(number.value)) {
-            nguoilon.value='1';
-            treem1.value='0';
-            treem2.value='0';
-            treem3.value='0';
+            nguoilon.value = '1';
+            treem1.value = '0';
+            treem2.value = '0';
+            treem3.value = '0';
             alert('Số vé không đủ! Vui lòng chọn lại số người!');
+        } else if (parseInt(nguoilon.value) < 0 || parseInt(treem1.value) < 0 || parseInt(treem2.value) < 0 || parseInt(treem3.value) < 0) {
+            nguoilon.value = '1';
+            treem1.value = '0';
+            treem2.value = '0';
+            treem3.value = '0';
+            alert('Vui lòng nhập số người lớn hơn 0');
+        } else if ((parseInt(nguoilon.value) + parseInt(treem1.value) + parseInt(treem2.value) + parseInt(treem3.value)) == 0) {
+            nguoilon.value = '1';
+            treem1.value = '0';
+            treem2.value = '0';
+            treem3.value = '0';
+            alert('Vui lòng nhập số người lớn hơn 0');
+        } else if ((parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100) < 0) {
+            nguoilon.value = '1';
+            treem1.value = '0';
+            treem2.value = '0';
+            treem3.value = '0';
+            alert('Vui lòng nhập số người lớn hơn 0');
         } else {
             sum.value = parseInt(nguoilon.value) * parseInt(price.value) + parseInt(treem1.value) * parseInt(price.value) * 45 / 100 + parseInt(treem2.value) * parseInt(price.value) * 25 / 100 + parseInt(treem3.value) * parseInt(price.value) * 5 / 100;
             errors.innerText = '*Mã không đúng';

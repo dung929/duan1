@@ -42,7 +42,7 @@ function  index()
     session_start();
     if (!isset($_SESSION['user'])) {
         $errors = 'Vui lòng đăng nhập để sử dụng';
-        header("location: index.php?url=login_user&errors=$errors");
+        header("location: index.php?url=login&errors=$errors");
     }
     else if($_SESSION['user']['role_id'] != 1){
         header("location: index.php?url=403");
@@ -66,10 +66,10 @@ function login_user()
         if (!$user) {
             $errors = 'Người dùng không tồn tại!';
 
-            header("location:index.php?url=login_user&errors=$errors");
+            header("location:index.php?url=login&errors=$errors");
         } else if (!password_verify($password, $user['password'])) {
             $errors = 'Mật khẩu không chính xác!';
-            header("location:index.php?url=login_user&errors=$errors");
+            header("location:index.php?url=login&errors=$errors");
         } else {
             session_start();
             $_SESSION['user'] = $user;
@@ -82,7 +82,7 @@ function logout_user()
 {
     session_start();
     unset($_SESSION['user']);
-    header('location:index.php?url=login_user');
+    header('location:index.php?url=login');
 }
 function loi() {
     include_once './views/admin/403.php';

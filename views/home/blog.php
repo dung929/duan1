@@ -34,7 +34,27 @@
 
 
     <!-- Navbar Start -->
-    <?php include_once './views/layout/client_navbar.php'; ?>
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>ER</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="index.php?url=home" class="nav-item nav-link">TRANG CHỦ</a>
+                        <a href="index.php?url=about" class="nav-item nav-link">GIỚI THIỆU</a>
+                        <a href="index.php?url=list_products" class="nav-item nav-link">DU LỊCH</a>
+                        <a href="index.php?url=blog" class="nav-item nav-link active">TIN TỨC</a>
+                        <a href="index.php?url=contact" class="nav-item nav-link">LIÊN HỆ</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
 
     <!-- Navbar End -->
 
@@ -43,11 +63,11 @@
     <div class="container-fluid page-header">
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-4 text-white text-uppercase">Blog</h3>
+                <h3 class="display-4 text-white text-uppercase">Tin tức</h3>
                 <div class="d-inline-flex text-white">
-                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <p class="m-0 text-uppercase"><a class="text-white" href="">Trang chủ</a></p>
                     <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                    <p class="m-0 text-uppercase">Blog</p>
+                    <p class="m-0 text-uppercase">Tin tức</p>
                 </div>
             </div>
         </div>
@@ -244,9 +264,6 @@
     
                 <div class="col-lg-4 mt-5 mt-lg-0">
                     <!-- Author Bio -->
-<<<<<<< HEAD
-                
-=======
                     <div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4">
                         <img src="template_client/img/phuctuvi.jpg" class="img-fluid mx-auto mb-3" style="width: 100px;">
                         <h3 class="text-primary mb-3">Phúc Tử Vi</h3>
@@ -269,7 +286,6 @@
                             </a>
                         </div>
                     </div>
->>>>>>> 3af50189028a3ebe98d14954a0f7bb9f7d345c67
     
                     <!-- Search Form -->
                  

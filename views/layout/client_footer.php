@@ -4,7 +4,7 @@
                 <a href="" class="navbar-brand">
                     <h1 class="text-primary"><span class="text-white">TRAVEL</span>ER</h1>
                 </a>
-                <p>Chào mừng các bạn đã đến với VIVU TOUR, hãy tương tắc với chúng tôi qua các phần mô tả bên dưới!</p>
+                <p>Chào mừng các bạn đã đến với VIVU TOUR, hãy tương tác với chúng tôi qua các phần mô tả bên dưới!</p>
              <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
                
 
