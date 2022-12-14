@@ -17,6 +17,17 @@
 
     <!-- Custom styles for this template-->
     <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        .submit{
+            background-color: red;
+           border-radius: 8px;
+           margin-top: 5px;
+           color: white;
+           font-weight: 500;
+           padding: 5px 10px 5px 10px;
+           border: none;
+        }
+    </style>
 
 </head>
 
@@ -124,6 +135,7 @@
                         </li>
 
                         <!-- Nav Item - Messages -->
+
                         <!-- Dropdown - Messages -->
                         <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                             <h6 class="dropdown-header">
@@ -182,7 +194,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']['name'] ?> </span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']['name'] ?></span>
                                 <img class="template/img-profile rounded-circle" src="template/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -217,7 +229,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Quản lí Booking</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Quản lí liên hệ</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -226,87 +238,58 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Tên Tour</th>
-                                    <th>Tên Khách Hàng</th>
-                                    <th>Số Người Đi</th>
-                                    <th>Thời gian đặt tour</th>
-                                    <th>Phương tiện</th>
-                                    <th>Nhân viên hướng dẫn</th>
-                                    <th>Khách sạn</th>
-                                    <th>Danh mục</th>
-                                    <th>Tổng tiền</th>
-                                    <th>Trạng thái</th>
-                                    <th style="width: 250px;">Thao tác</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Tên Tour</th>
-                                    <th>Tên Khách Hàng</th>
-                                    <th>Số Người Đi</th>
-                                    <th>Thời gian đặt tour</th>
-                                    <th>Phương tiện</th>
-                                    <th>Nhân viên hướng dẫn</th>
-                                    <th>Khách sạn</th>
-                                    <th>Danh mục</th>
-                                    <th>Tổng tiền</th>
+                                    <th>Id</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Ghi chú</th>
                                     <th>Trạng thái</th>
                                     <th>Thao tác</th>
                                 </tr>
-                            </tfoot>
+                            </thead>
                             <tbody>
-                                <?php foreach ($booking as $key => $value) : ?>
+                                <?php foreach ($contact as $key => $value) : ?>
                                     <tr>
-                                        <td><?= $value['name_tour'] ?></td>
-                                        <td><?= $value['name_client'] ?></td>
-                                        <td><?= $value['number_client'] ?></td>
-                                        <td><?= $value['time_booktour'] ?></td>
-                                        <td><?= $value['coach_tour'] ?></td>
-                                        <td><?= $value['guide_tour'] ?></td>
-                                        <td><?= $value['hotel_tour'] ?></td>
-                                        <td><?= $value['category_name'] ?></td>
-                                        <td><?= $value['sum_tour'] ?>$</td>
-                                        <td>    
+                                        <td><?= $value['id'] ?></td>
+                                        <td><?= $value['name'] ?></td>
+                                        <td><?= $value['email'] ?></td>
+                                        <td><?= $value['phone'] ?></td>
+                                        <td><?= $value['content'] ?></td>
+                                        <td>
                                             <?php
                                             if ($value['status'] == 'Chờ xác nhận') {
                                                 echo '<span class="badge badge-warning">' . $value['status'] . '</span>';
                                             } else if ($value['status'] == 'Đã xác nhận') {
                                                 echo '<span class="badge badge-primary">' . $value['status'] . '</span>';
-                                            } else if ($value['status'] == 'Đã thanh toán') {
-                                                echo '<span class="badge badge-success">' . $value['status'] . '</span>';
-                                            } else if ($value['status'] == 'Đã checkin') {
-                                                echo '<span class="badge badge-info">' . $value['status'] . '</span>';
-                                            } else if ($value['status'] == 'Đã checkout') {
-                                                echo '<span class="badge badge-secondary">' . $value['status'] . '</span>';
-                                            } else if ($value['status'] == 'Hủy') {
-                                                echo '<span class="badge badge-danger">' . $value['status'] . '</span>';
                                             }
                                             ?>
                                         </td>
                                         <td>
-                                            <form action="index.php?url=updateStatus" method="POST">
+                                            <form action="index.php?url=updateContact" method="POST">
                                                 <?php
                                                 if ($value['status'] == 'Chờ xác nhận') {
-                                                    echo '<input name="id" type="hidden" value="'.$value['id'].'"><input name="status" type="hidden" value="Đã xác nhận"> <button type="submit" class="btn btn-primary">Xác nhận</button> ';
+                                                    echo '<input name="id" type="hidden" value="' . $value['id'] . '"><input name="status" type="hidden" value="Đã xác nhận"> <button type="submit" class="btn btn-primary">Xác nhận</button> ';
                                                 } else if ($value['status'] == 'Đã xác nhận') {
-                                                    echo '<input name="id" type="hidden" value="'.$value['id'].'"><input name="status" type="hidden" value="Đã thanh toán"><button type="submit" class="btn btn-success">Đã thanh toán</button> ';
-                                                } else if ($value['status'] == 'Đã thanh toán') {
-                                                    echo '<input name="id" type="hidden" value="'.$value['id'].'"><input name="status" type="hidden" value="Đã checkin"><button type="submit" class="btn btn-info">Checkin</button> ';
-                                                } else if ($value['status'] == 'Đã checkin') {
-                                                    echo '<input name="id" type="hidden" value="'.$value['id'].'"><input name="status" type="hidden" value="Đã checkout"><button type="submit" class="btn btn-secondary">checkout</button> ';
-                                                }
-                                                ?>
-                                                <button type="button" class="btn btn-primary">
-                                                    Sửa
-                                                </button>
-                                                <button type="button" class="btn btn-danger">
-                                                    Hủy
-                                                </button>
+                                                    echo '<input name="id" type="hidden" value="' . $value['id'] . '"><input name="status" type="hidden" value="Đã xác nhận"><button class="btn btn-success">Đã check</button> ';
+                                                } ?>
                                             </form>
+                                            <button class="submit">Xóa</button>
                                         </td>
+                                       
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Ghi chú</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
 

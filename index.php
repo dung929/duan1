@@ -7,6 +7,7 @@ require_once 'Controllers/quanliuserControllers.php';
 require_once 'Controllers/TourControllers.php';
 require_once 'Controllers/HomeControllers.php';
 require_once 'Controllers/quanlycategory.php';
+require_once 'Controllers/quanlycontact.php';
 $url = isset($_GET['url']) ? $_GET['url'] : '/';
 switch ($url) {
     case 'login':
@@ -20,6 +21,9 @@ switch ($url) {
         break;
     case 'updateStatus':
         updateStatus();
+        break;
+    case 'updateContact':
+        updateContact();
         break;
     case 'get_chart_data':
         getChartData();
@@ -69,6 +73,9 @@ switch ($url) {
     case 'qlcate_index':
         quanlicategory();
         break;
+    case 'qlcontact_index':
+        quanlicontact();
+        break;
     case 'travel':
         travel();
         break;
@@ -80,10 +87,6 @@ switch ($url) {
         $id = $_GET['id'];
         dat_tour($id);
         break;
-    case 'contact_client':
-        $id = $_GET['id'];
-        contact_client($id);
-        break;
     case 'submit_tour':
         submit_tour();
         break;
@@ -92,6 +95,9 @@ switch ($url) {
         break;
     case 'logout_user':
         logout_user();
+        break;
+    case 'contactt':
+        contactt();
         break;
     default:
         echo 'Đường dẫn không tồn tại';

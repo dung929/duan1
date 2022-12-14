@@ -13,7 +13,7 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -33,15 +33,39 @@
 
 
     <!-- Navbar Start -->
-    <?php include_once './views/layout/client_navbar.php'; ?>
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>ER</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="index.php?url=home" class="nav-item nav-link ">TRANG CHỦ</a>
+                        <a href="index.php?url=about" class="nav-item nav-link active">GIỚI THIỆU</a>
+                        <a href="index.php?url=list_products" class="nav-item nav-link">DU LỊCH</a>
+                        <a href="index.php?url=blog" class="nav-item nav-link">TIN TỨC</a>
+                        <a href="index.php?url=contact" class="nav-item nav-link">LIÊN HỆ</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
 
     <!-- Navbar End -->
     <!-- Header Start -->
     <div class="container-fluid page-header">
         <div class="container">
             <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-                <h3 class="display-4 text-white text-uppercase">DU LỊCH</h3>
-                
+                <h3 class="display-4 text-white text-uppercase">Giới thiệu</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="">Trang chủ</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Giới thiệu</p>
+                </div>
             </div>
         </div>
     </div>
@@ -139,54 +163,19 @@
                 <h1>Hướng dẫn du lịch của chúng tôi</h1>
             </div>
             <div class="row">
+                <?php foreach ($guide as $key => $value) : ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="template_client/img/team-1.jpg" alt="">
-                            
+                            <img class="img-fluid w-100" src="<?= $value['image'] ?>" alt="">
+
                         </div>
                         <div class="text-center py-4">
-                            <h5 class="text-truncate">TIẾN BỊP</h5>
-                            <p class="m-0">CHỈ ĐỊNH</p>
+                            <h5 class="text-truncate"><?= $value['name'] ?></h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="template_client/img/team-2.jpg" alt="">
-                           
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">PHÚC X O</h5>
-                            <p class="m-0">CHỈ ĐỊNH</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="template_client/img/team-3.jpg" alt="">
-                            
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">ĐAM THIẾU NỮ</h5>
-                            <p class="m-0">CHỈ ĐỊNH</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="template_client/img/team-4.jpg" alt="">
-                            
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate">DŨNG STYLE</h5>
-                            <p class="m-0">CHỈ ĐỊNH</p>
-                        </div>
-                    </div>
-                </div>
+            <?php endforeach ?>
             </div>
         </div>
     </div>
@@ -196,7 +185,7 @@
     <!-- Footer Start -->
     <?php include_once './views/layout/client_footer.php'; ?>
 
-    
+
     <!-- Footer End -->
 
 

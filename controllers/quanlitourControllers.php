@@ -8,7 +8,7 @@ function  quanlitour()
     session_start();
     if (!isset($_SESSION['user'])) {
         $errors = 'Vui lòng đăng nhập để sử dụng';
-        header("location: index.php?url=login_user&errors=$errors");
+        header("location: index.php?url=login&errors=$errors");
     }    else if($_SESSION['user']['role_id'] != 1){
         header("location: index.php?url=403");
     }
@@ -21,10 +21,10 @@ function  quanlitour()
 function taotour()
 {
     session_start();
-    if (!isset($_SESSION['user_admin'])) {
+    if (!isset($_SESSION['user'])) {
         $errors = 'Vui lòng đăng nhập để sử dụng';
-        header("location: index.php?url=login_user&errors=$errors");
-    } else if (isset($_SESSION['user_admin'])) {
+        header("location: index.php?url=login&errors=$errors");
+    } else if (isset($_SESSION['user'])) {
         $taotour = createTour();
         $products = getAllProducts();
         $categories = getAllCategories();

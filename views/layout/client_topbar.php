@@ -24,7 +24,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
                     <?php } else if (isset($_SESSION['user'])) { ?>
                        <a href="index.php?url=profileUser&id=<?= $_SESSION['user']['id']?>"><?= $_SESSION['user']['name'] ?><img style="width:70px;" class="template/img-profile rounded-circle " src="<?= $_SESSION['user']['image'] ?>"></a> 
 
-                        <a class="text-primary pl-3 pr-3" href="index.php?url=logout"><button onclick="return confirm('Bạn có muốn đăng xuất không ?')"> Đăng xuất</button></a>
+                        <a class="text-primary pl-3 pr-3" href="index.php?url=logout"><button onclick="return confirm('Bạn có muốn đăng xuất không ?')"><i class="fas fa-sign-out-alt";"></i></button></a>
                     <?php } ?>
                 </div>
             </div>

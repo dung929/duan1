@@ -1,6 +1,7 @@
 <?php
 require_once('models/products.php');
 require_once('models/client.php');
+require_once('models/contact.php');
 function travel()
 {
   $travels = getTravel();
@@ -32,9 +33,4 @@ function dat_tour()
     include_once './views/home/dat_tour.php';
   }
 }
-function contact_client()
-{
-  $id = $_GET['id'];
-  $contact_client = getContact_client($id);
-  include_once './views/backup/contact_client.php';
-}
+

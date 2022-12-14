@@ -7,15 +7,15 @@ function  quanlibooking()
     session_start();
     if (!isset($_SESSION['user'])) {
         $errors = 'Vui lòng đăng nhập để sử dụng';
-        header("location: index.php?url=login_user&errors=$errors");
-    }    else if($_SESSION['user']['role_id'] != 1){
+        header("location: index.php?url=login&errors=$errors");
+    } else if ($_SESSION['user']['role_id'] != 1) {
         header("location: index.php?url=403");
-    } 
-    else if (isset($_SESSION['user'])) {
+    } else if (isset($_SESSION['user'])) {
         include_once './views/admin/quanlibooking.php';
     }
 }
-function updateStatus(){
+function updateStatus()
+{
     $update = updateStatusBooking($_POST['id'], $_POST['status']);
     header("location: index.php?url=qlbooking_index");
 }
@@ -23,10 +23,12 @@ function taoBooking()
 {
     $taobooking = getTaoBooking();
     header('location:index.php?url=submit_tour');
-
 }
-function submit_tour(){
+function submit_tour()
+{
     session_start();
-    $submit_tour = getSubmittour();
+    $clientId = $_SESSION['user']['id'];
+    $submit_tour = getSubmittour($clientId);
+    $update_number = updateNumber();
     include './views/auth/history_tour.php';
 }

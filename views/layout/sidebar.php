@@ -37,6 +37,11 @@
             <i class="fas fa-user"></i>
             <span>Quản lí danh mục</span></a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/duan1/index.php?url=qlcontact_index">
+            <i class="fas fa-user"></i>
+            <span>Quản lí liên hệ</span></a>
+    </li>
 
 
     <!-- Divider -->
