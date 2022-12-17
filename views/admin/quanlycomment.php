@@ -57,7 +57,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                   
+                  
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -211,7 +211,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Quản lí liên hệ</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Quản lí bình luận</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -221,42 +221,25 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Họ và tên</th>
-                                    <th>Email</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Ghi chú</th>
-                                    <th>Trạng thái</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Tên tour</th>
+                                    <th>Nội dung</th>
+                                    <th>Thời gian</th>
                                     <th>Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($contact as $key => $value) : ?>
+                                <?php foreach ($comment as $key => $value) : ?>
                                     <tr>
                                         <td><?= $value['id'] ?></td>
+                                        <td><?= $value['name_client'] ?></td>
                                         <td><?= $value['name'] ?></td>
-                                        <td><?= $value['email'] ?></td>
-                                        <td><?= $value['phone'] ?></td>
                                         <td><?= $value['content'] ?></td>
+                                        <td><?= $value['time'] ?></td>
                                         <td>
-                                            <?php
-                                            if ($value['status'] == 'Chờ xác nhận') {
-                                                echo '<span class="badge badge-warning">' . $value['status'] . '</span>';
-                                            } else if ($value['status'] == 'Đã xác nhận') {
-                                                echo '<span class="badge badge-primary">' . $value['status'] . '</span>';
-                                            }
-                                            ?>
-                                        </td>
-                                        <td>
-                                            <form action="index.php?url=updateContact" method="POST">
-                                                <?php
-                                                if ($value['status'] == 'Chờ xác nhận') {
-                                                    echo '<input name="id" type="hidden" value="' . $value['id'] . '"><input name="status" type="hidden" value="Đã xác nhận"> <button type="submit" class="btn btn-primary">Xác nhận</button> ';
-                                                } else if ($value['status'] == 'Đã xác nhận') {
-                                                    echo '<input name="id" type="hidden" value="' . $value['id'] . '"><input name="status" type="hidden" value="Đã xác nhận"><button class="btn btn-success">Đã check</button> ';
-                                                } ?>
-                                            </form>
-                                           
-                                            <a href="index.php?url=deleteContact&id=<?=$value['id']?>" class="submit">Xóa</a>
+                                            <a href="index.php?url=deleteComment&id=<?= $value['id'] ?>">
+                                                <button onclick="return confirm('Bạn có muốn xóa không?')" class="btn btn-danger mt-2">Xóa</button>
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
@@ -264,11 +247,10 @@
                             <tfoot>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Họ và tên</th>
-                                    <th>Email</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Ghi chú</th>
-                                    <th>Trạng thái</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Tên tour</th>
+                                    <th>Nội dung</th>
+                                    <th>Thời gian</th>
                                     <th>Thao tác</th>
                                 </tr>
                             </tfoot>

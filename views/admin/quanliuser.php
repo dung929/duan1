@@ -46,16 +46,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                   
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -182,24 +173,15 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']['username'] ?></span>
-                                <img class="template/img-profile rounded-circle" src="template/img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']['name'] ?></span>
+                                <img class="template/img-profile rounded-circle" style="width: 50px;" src="<?= $_SESSION['user']['image'] ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="index.php?url=profileUser">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="index.php?url=logout_user">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -219,7 +201,9 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Quản lí Khách Hàng</h1>
                     </div>
-
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom:15px ;">
+                        <a href="index.php?url=register" class="btn btn-primary"> Thêm mới khách hàng</a>
+                    </button>
                     <!-- Content Row -->
 
                     <div class="table-responsive">
@@ -257,21 +241,24 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form method="POST" action="index.php?url=qluser_index">
+                                                            <form method="POST" action="index.php?url=updatePass&id=<?= $value['id'] ?>">
                                                                 <div class="form-group">
                                                                     <input type="hidden" value="<?= $value['id'] ?>" class="form-control" name="id" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="exampleInputEmail1">Nhập mật khẩu mới lần 1 :</label>
-                                                                    <input type="password" value="<? $value['password'] ?>" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                                    <input type="password" name="password_1" class="form-control" name="password" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                                 </div>
-                                                                <!-- <div class="form-group">
+                                                                <div class="form-group">
                                                                     <label for="exampleInputEmail1">Nhập mật khẩu mới lần 2 :</label>
                                                                     <input type="password" class="form-control" name="password_2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-                                                                </div> -->
+                                                                </div>
+                                                                <?php if (isset($_GET['errors'])) : ?>
+                                                                    <span style="color:red;"><?= $_GET['errors'] ?></span>
+                                                                <?php endif ?>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                                                    <a href="index.php?url=qluser_index?id<? $value['id'] ?>"> <button type="submit" class="btn btn-primary">Lưu</button></a>
+                                                                    <button type="submit" class="btn btn-primary">Lưu</button></a>
                                                                 </div>
                                                             </form>
 

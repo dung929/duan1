@@ -214,9 +214,8 @@
                     <div class="card shadow mb-4">
                         <div class="card-body">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom:15px ;">
-                                Thêm mới tour
+                                Sửa tour
                             </button>
-
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -228,39 +227,39 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form method="POST" action="index.php?url=taotour" enctype="multipart/form-data">
+                                            <form method="POST" action="index.php?url=updateTour" enctype="multipart/form-data">
+                                                <input type="hidden" name="id" value="<?= $details['id'] ?>">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Tên:</label>
-                                                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-
+                                                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="<?= $details['name'] ?>">
                                                     <?php if (isset($_GET['name_err'])) : ?>
                                                         <span style="color:red;"><?= $_GET['name_err'] ?></span>
                                                     <?php endif ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Giá:</label>
-                                                    <input type="number" class="form-control" name="price" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="number" class="form-control" name="price" value="<?= $details['price'] ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                     <?php if (isset($_GET['price_err'])) : ?>
                                                         <span style="color:red;"><?= $_GET['price_err'] ?></span>
                                                     <?php endif ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Thời gian bắt đầu:</label>
-                                                    <input type="date" class="form-control" name="time_start" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="date" class="form-control" name="time_start" value="<?= $details['time_start'] ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                     <?php if (isset($_GET['times_err'])) : ?>
                                                         <span style="color:red;"><?= $_GET['times_err'] ?></span>
                                                     <?php endif ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Thời gian kết thúc:</label>
-                                                    <input type="date" class="form-control" name="time_end" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="date" class="form-control" name="time_end" value="<?= $details['time_end'] ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                     <?php if (isset($_GET['timee_err'])) : ?>
                                                         <span style="color:red;"><?= $_GET['timee_err'] ?></span>
                                                     <?php endif ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Nội dung:</label>
-                                                    <input type="text" class="form-control" name="content" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <input type="text" class="form-control" name="content" value="<?= $details['content'] ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                     <?php if (isset($_GET['content_err'])) : ?>
                                                         <span style="color:red;"><?= $_GET['content_err'] ?></span>
                                                     <?php endif ?>
@@ -270,32 +269,15 @@
 
                                                     <?php if (isset($_GET['image_err'])) : ?>
                                                         <span style="color:red;"><?= $_GET['image_err'] ?></span>
-                                                    <?php endif ?><input type="file" class="form-control" name="image" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <?php endif ?><input type="file" class="form-control" name="image" value="<?= $details['image'] ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Số lượng vé:</label>
-                                                   <input type="number" class="form-control" name="number" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-                                                   <?php if (isset($_GET['number_err'])) : ?>
+                                                    
+                                                    <input type="number" class="form-control" name="number" value="<?= $dat_tour['number'] ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                    <?php if (isset($_GET['number_err'])) : ?>
                                                         <span style="color:red;"><?= $_GET['number_err'] ?></span>
                                                     <?php endif ?>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Số ngày:</label>
-                                                   <input type="number" class="form-control" name="day" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-                                                   <?php if (isset($_GET['day_err'])) : ?>
-                                                        <span style="color:red;"><?= $_GET['day_err'] ?></span>
-                                                    <?php endif ?>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Lịch trình:</label>
-                                                   <input type="text" class="form-control" name="schedule" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-                                                   <?php if (isset($_GET['schedule_err'])) : ?>
-                                                        <span style="color:red;"><?= $_GET['schedule_err'] ?></span>
-                                                    <?php endif ?>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Tour nổi bật:</label>
-                                                   <input type="radio" name="istrending" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="1">Tour nổi bật
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1">Danh mục:</label>
@@ -372,51 +354,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Tên</th>
-                                            <th>Giá</th>
-                                            <th>Thời gian bắt dầu</th>
-                                            <th>Thời gian kết thúc</th>
-                                            <th>Nội dung</th>
-                                            <th>Ảnh</th>
-                                            <th>Danh mục</th>
-                                            <th>Update</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Tên</th>
-                                            <th>Giá</th>
-                                            <th>Thời gian bắt dầu</th>
-                                            <th>Thời gian kết thúc</th>
-                                            <th>Nội dung</th>
-                                            <th>Ảnh</th>
-                                            <th>Danh mục</th>
-                                            <th>Update</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php foreach ($products as $key => $value) : ?>
-                                            <tr>
-                                                <td><?= $value['id'] ?></td>
-                                                <td><?= $value['name'] ?></td>
-                                                <td><?= $value['price'] ?></td>
-                                                <td><?= $value['time_start'] ?></td>
-                                                <td><?= $value['time_end'] ?></td>
-                                                <td><?= $value['content'] ?></td>
-                                                <td><img src="<?= $value['image'] ?>" alt="" height="100"></td>
-                                                <td><?= $value['category_name'] ?></td>
-                                                <td><a href="index.php?url=editTour&id=<?= $value['id']?>">Sửa</a></td>
-                                            </tr>
-                                        <?php endforeach ?>
-                                    </tbody>
-                                </table>
-                            </div>
+
                         </div>
                     </div>
 

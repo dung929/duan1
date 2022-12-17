@@ -21,3 +21,8 @@ function updateStatusContact($id, $status)
     $sql = " UPDATE contact SET status='$status' where id=$id ";
     return getData($sql, NOT_FETCH);
 }
+function deleteCon()
+{
+    $sql = "DELETE FROM contact";
+    return getData($sql, NOT_FETCH);
+}

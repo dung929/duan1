@@ -45,7 +45,7 @@
                     <span>Trang Chủ</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/duan1/index.php?url=submit_tour">
+                <a class="nav-link" href="/duan1/index.php?url=history_tour">
                     <i class="fas fa-plane"></i>
                     <span>Lịch sử đặt tour</span></a>
             </li>
@@ -147,7 +147,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="p-2"><a href="">Cập nhật thông tin</a></button>
+                                 
                                 </div>
                             </div>
                         </div>
