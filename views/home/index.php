@@ -167,7 +167,7 @@
                 <?php foreach ($categories as $key => $value) : ?>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="destination-item position-relative overflow-hidden mb-2">
-                            <img class="img-fluid" src="<?= 'template_client/img/' . $value['img'] ?>" alt="">
+                            <img class="img-fluid" src="<?= $value['img'] ?>" alt="">
                             <a class="destination-overlay text-white text-decoration-none" href="index.php?url=list_products&category=<?= $value['id'] ?>">
                                 <h5 class="text-white"><?= $value['name'] ?></h5>
                             </a>
@@ -217,7 +217,11 @@
 
     <!-- Packages Start -->
     <div class="container-fluid ">
-        <div class="container  pb-3">
+        <div class="container pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">TOUR</h6>
+                <h1>TOUR NỔI BẬT</h1>
+            </div>
             <div class="row">
                 <?php foreach ($products as $key => $value) :
                     if ($value['number'] > 0) { ?>
@@ -280,18 +284,18 @@
             </div>
             <div class="row">
                 <?php foreach ($guide as $key => $value) : ?>
-                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="team-item bg-white mb-4">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?= $value['image'] ?>" alt="">
+                    <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                        <div class="team-item bg-white mb-4">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid w-100" src="<?= $value['image'] ?>" alt="">
 
-                        </div>
-                        <div class="text-center py-4">
-                            <h5 class="text-truncate"><?= $value['name'] ?></h5>
+                            </div>
+                            <div class="text-center py-4">
+                                <h5 class="text-truncate"><?= $value['name'] ?></h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endforeach ?>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
@@ -306,6 +310,7 @@
                 <h1>Khách hàng của chúng tôi nói gì</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
+                <?php foreach($comment as $key => $value): ?>
                 <div class="text-center pb-4">
                     <img class="img-fluid mx-auto" src="template_client/img/testimonial-1.jpg" style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
@@ -315,6 +320,7 @@
                         <span>Profession</span>
                     </div>
                 </div>
+                <?php endforeach ?>
                 <div class="text-center">
                     <img class="img-fluid mx-auto" src="template_client/img/testimonial-2.jpg" style="width: 100px; height: 100px;">
                     <div class="testimonial-text bg-white p-4 mt-n5">
@@ -356,11 +362,11 @@
                 <h1>TIN TỨC MỚI NHẤT </h1>
             </div>
             <div class="row pb-3">
-                <?php foreach ($blog as $key => $value) : ?>
+                <?php foreach ($blog2 as $key => $value) : ?>
                     <div class="col-lg-4 col-md-6 mb-4 pb-2">
                         <div class="blog-item">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="<?= 'template_client/img/' . $value['image']  ?>" alt="">
+                                <img class="img-fluid w-100" src="<?= $value['image']  ?>" alt="">
                                 <div class="blog-date">
                                     <h6 class="font-weight-bold mb-n1">01</h6>
                                     <small class="text-white text-uppercase">Jan</small>
@@ -370,7 +376,6 @@
                                 <div class="d-flex mb-2">
                                     <a class="text-primary text-uppercase text-decoration-none" href=""><?= $value['name']  ?></a>
                                 </div>
-                                <a class="h5 m-0 text-decoration-none" href=""><?= $value['content_short']  ?></a>
                             </div>
                         </div>
                     </div>

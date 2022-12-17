@@ -21,14 +21,20 @@ function updateStatus()
 }
 function taoBooking()
 {
-    $taobooking = getTaoBooking();
-    header('location:index.php?url=submit_tour');
+    $taobooking = saveBooking();
+    header('location:index.php?url=thankyou');
 }
-function submit_tour()
+function history_tour()
 {
     session_start();
     $clientId = $_SESSION['user']['id'];
     $submit_tour = getSubmittour($clientId);
-    $update_number = updateNumber();
     include './views/auth/history_tour.php';
+}
+function  thankyou(){
+    include_once './views/auth/thankyou.php';
+}
+function deleteBooking(){
+    $delete = deleteBook();
+    header("location:index.php?url=qlbooking_index");
 }

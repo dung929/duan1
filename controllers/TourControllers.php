@@ -10,14 +10,19 @@ function travel()
 function getDetail_productOne()
 {
   session_start();
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $taocomment = taoCommentProducts();
+  if (!isset($_SESSION['user'])) {
+    $errors = 'Vui lòng đăng nhập để sử dụng';
+    header("location: index.php?url=login&errors=$errors");
+  } else if (isset($_SESSION['user'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $taocomment = taoCommentProducts();
+    }
+    $id = $_GET['id'];
+    $comment = getCommentProduct($id);
+    $details = getDetail_productOnecc($id);
+    $products = getAllProducts();
+    include_once './views/home/detail.php';
   }
-  $id = $_GET['id'];
-  $comment = getCommentProduct($id);
-  $details = getDetail_productOnecc($id);
-  $products = getAllProducts();
-  include_once './views/home/detail.php';
 }
 function dat_tour()
 {
@@ -33,4 +38,3 @@ function dat_tour()
     include_once './views/home/dat_tour.php';
   }
 }
-

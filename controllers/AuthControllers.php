@@ -43,3 +43,7 @@ function tao_register(){
     $tao_register = getTaoRegister();
     include_once './views/auth/login.php';
 }
+function updatePass(){
+    $updatePass = updatePassNew();
+    header('location:index.php?url=qluser_index');
+}

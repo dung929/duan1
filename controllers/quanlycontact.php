@@ -23,3 +23,8 @@ function contactt()
     $contactt = getContact();
     header('location:index.php?url=home');
 }
+function deleteContact(){
+    $id=$_GET['id'];
+    $delete = deleteCon($id);
+    header('location:index.php?url=qlcontact_index');
+}

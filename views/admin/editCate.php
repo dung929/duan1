@@ -3,7 +3,7 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -14,20 +14,8 @@
     <!-- Custom fonts for this template-->
     <link href="template/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
     <!-- Custom styles for this template-->
     <link href="template/css/sb-admin-2.min.css" rel="stylesheet">
-    <style>
-        .submit {
-            background-color: red;
-            border-radius: 8px;
-            margin-top: 5px;
-            color: white;
-            font-weight: 500;
-            padding: 5px 10px 5px 10px;
-            border: none;
-        }
-    </style>
 
 </head>
 
@@ -42,7 +30,6 @@
         ?>
         <!-- End of Sidebar -->
 
-        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
@@ -52,12 +39,23 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
-                   
+                    <form method="POST" action="index.php?url=qltour_index" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -126,7 +124,6 @@
                         </li>
 
                         <!-- Nav Item - Messages -->
-
                         <!-- Dropdown - Messages -->
                         <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                             <h6 class="dropdown-header">
@@ -134,7 +131,7 @@
                             </h6>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="dropdown-list-image mr-3">
-                                    <img class="rounded-circle" src="template/img/undraw_profile_1.svg" alt="...">
+                                    <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
                                     <div class="status-indicator bg-success"></div>
                                 </div>
                                 <div class="font-weight-bold">
@@ -145,7 +142,7 @@
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="dropdown-list-image mr-3">
-                                    <img class="rounded-circle" src="template/img/undraw_profile_2.svg" alt="...">
+                                    <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
                                     <div class="status-indicator"></div>
                                 </div>
                                 <div>
@@ -156,7 +153,7 @@
                             </a>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <div class="dropdown-list-image mr-3">
-                                    <img class="rounded-circle" src="template/img/undraw_profile_3.svg" alt="...">
+                                    <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
                                     <div class="status-indicator bg-warning"></div>
                                 </div>
                                 <div>
@@ -210,129 +207,122 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Quản lí liên hệ</h1>
-                    </div>
+                    <h1 class="h3 mb-2 text-gray-800">Quản Lí Danh Mục</h1>
 
-                    <!-- Content Row -->
 
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Họ và tên</th>
-                                    <th>Email</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Ghi chú</th>
-                                    <th>Trạng thái</th>
-                                    <th>Thao tác</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($contact as $key => $value) : ?>
-                                    <tr>
-                                        <td><?= $value['id'] ?></td>
-                                        <td><?= $value['name'] ?></td>
-                                        <td><?= $value['email'] ?></td>
-                                        <td><?= $value['phone'] ?></td>
-                                        <td><?= $value['content'] ?></td>
-                                        <td>
-                                            <?php
-                                            if ($value['status'] == 'Chờ xác nhận') {
-                                                echo '<span class="badge badge-warning">' . $value['status'] . '</span>';
-                                            } else if ($value['status'] == 'Đã xác nhận') {
-                                                echo '<span class="badge badge-primary">' . $value['status'] . '</span>';
-                                            }
-                                            ?>
-                                        </td>
-                                        <td>
-                                            <form action="index.php?url=updateContact" method="POST">
-                                                <?php
-                                                if ($value['status'] == 'Chờ xác nhận') {
-                                                    echo '<input name="id" type="hidden" value="' . $value['id'] . '"><input name="status" type="hidden" value="Đã xác nhận"> <button type="submit" class="btn btn-primary">Xác nhận</button> ';
-                                                } else if ($value['status'] == 'Đã xác nhận') {
-                                                    echo '<input name="id" type="hidden" value="' . $value['id'] . '"><input name="status" type="hidden" value="Đã xác nhận"><button class="btn btn-success">Đã check</button> ';
-                                                } ?>
-                                            </form>
-                                           
-                                            <a href="index.php?url=deleteContact&id=<?=$value['id']?>" class="submit">Xóa</a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach ?>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Họ và tên</th>
-                                    <th>Email</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Ghi chú</th>
-                                    <th>Trạng thái</th>
-                                    <th>Thao tác</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-
-                    <!-- End of Main Content -->
-
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; Your Website 2021</span>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End of Footer -->
-
-                </div>
-                <!-- End of Content Wrapper -->
-
-            </div>
-            <!-- End of Page Wrapper -->
-
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
-
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom:15px ;">
+                                Sửa Danh Mục
                             </button>
-                        </div>
-                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Logout</a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="POST" action="index.php?url=updateCate" enctype="multipart/form-data">
+                                                <input type="hidden" name="id" value="<?= $onceCate['id'] ?>">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Tên:</label>
+                                                    <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" value="<?= $onceCate['name'] ?>">
+                                                    <?php if (isset($_GET['name_err'])) : ?>
+                                                        <span style="color:red;"><?= $_GET['name_err'] ?></span>
+                                                    <?php endif ?>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Ảnh:</label>
+
+                                                    <?php if (isset($_GET['image_err'])) : ?>
+                                                        <span style="color:red;"><?= $_GET['image_err'] ?></span>
+                                                    <?php endif ?>
+                                                    <input type="file" class="form-control" name="image" value="<?= $onceCate['img'] ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                                    <button type="submit" class="btn btn-primary">Lưu</button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="template/vendor/jquery/jquery.min.js"></script>
-            <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="template/vendor/jquery/jquery.min.js"></script>
+    <script src="template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="template/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="template/js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="template/js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="template/vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="template/vendor/chart.js/Chart.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="template/js/demo/chart-area-demo.js"></script>
-            <script src="template/js/demo/chart-pie-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="template/js/demo/chart-area-demo.js"></script>
+    <script src="template/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

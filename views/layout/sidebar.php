@@ -42,6 +42,16 @@
             <i class="fas fa-user"></i>
             <span>Quản lí liên hệ</span></a>
     </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/duan1/index.php?url=qlcomment_index">
+            <i class="fas fa-user"></i>
+            <span>Quản lí bình luận</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/duan1/index.php?url=qlblog_index">
+            <i class="fas fa-user"></i>
+            <span>Quản lí tin tức</span></a>
+    </li>
 
 
     <!-- Divider -->

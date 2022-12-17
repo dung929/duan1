@@ -11,7 +11,27 @@ function getAllProduct()
     $sql = "SELECT * FROM products";
     return getData($sql, FETCH_ALL);
 }
-function getTaoBooking()
+function getAllCoachh()
+{
+    $sql = "SELECT * FROM coach";
+    return getData($sql, FETCH_ALL);
+}
+function getAllCityy()
+{
+    $sql = "SELECT * FROM city";
+    return getData($sql, FETCH_ALL);
+}
+function getAllGuidee()
+{
+    $sql = "SELECT * FROM tour_guide";
+    return getData($sql, FETCH_ALL);
+}
+function getAllHotell()
+{
+    $sql = "SELECT * FROM hotel";
+    return getData($sql, FETCH_ALL);
+}
+function saveBooking()
 {
     $date_dat_tour = date('Y-m-d H:i:s');
     $name = $_POST['name'];
@@ -38,7 +58,7 @@ function getTaoBooking()
         $sql = "INSERT INTO ql_booking  "
             . "(time_booktour,name_tour,number_client,guide_tour,coach_tour,hotel_tour,category_name,sum_tour,id_client,name_client,id_products)"
             . " VALUES ('$date_dat_tour','$name','$sum_client','$name_guide','$name_coach','$name_hotel','$name_cate','$sum','$id_client','$name_client','$id')";
-        return getData($sql, NOT_FETCH);
+        $result = getData($sql, NOT_FETCH);
     } else if ($sale == 'abc') {
         $sale1 = 0.45;
         $sale2 = 0.25;
@@ -48,8 +68,8 @@ function getTaoBooking()
         $sql = "INSERT INTO ql_booking  "
             . "(time_booktour,name_tour,number_client,guide_tour,coach_tour,hotel_tour,category_name,sum_tour,id_client,name_client,id_products)"
             . " VALUES ('$date_dat_tour','$name','$sum_client','$name_guide','$name_coach','$name_hotel','$name_cate','$sum','$id_client','$name_client','$id')";
-        return getData($sql, NOT_FETCH);
-    }else{
+        $result = getData($sql, NOT_FETCH);
+    } else {
         $sale1 = 0.45;
         $sale2 = 0.25;
         $sale3 = 0.05;
@@ -57,27 +77,39 @@ function getTaoBooking()
         $sql = "INSERT INTO ql_booking  "
             . "(time_booktour,name_tour,number_client,guide_tour,coach_tour,hotel_tour,category_name,sum_tour,id_client,name_client,id_products)"
             . " VALUES ('$date_dat_tour','$name','$sum_client','$name_guide','$name_coach','$name_hotel','$name_cate','$sum','$id_client','$name_client','$id')";
-        return getData($sql, NOT_FETCH);
+        $result = getData($sql, NOT_FETCH);
     }
+    $sql2 = " UPDATE book_tour SET number = number - $sum_client Where id_tour=$id";
+    getData($sql2, NOT_FETCH);
+    return $result;
 }
-function updateStatusBooking($id,$status)
+function updateStatusBooking($id, $status)
 {
     $sql = " UPDATE ql_booking SET status='$status' where id=$id ";
     return getData($sql, NOT_FETCH);
 }
 function getBooking()
 {
-    $sql = "SELECT * FROM ql_booking  ";
+    $sql = "SELECT * FROM ql_booking ORDER BY id DESC ";
 
     return getData($sql, FETCH_ALL);
+}
+function deleteBook(){
+    $id = $_POST['id'];
+    $id_products = $_POST['id_products'];
+    $number = $_POST['number'];
+    $sql = "DELETE FROM ql_booking WHERE id=$id";
+    $result=getData($sql,NOT_FETCH);
+    $sql2 = "UPDATE book_tour SET number = number + $number Where id_tour=$id_products";
+    getData($sql2, NOT_FETCH);
+    return $result;
 }
 function getSubmittour($clientId)
 {
-    $sql = "SELECT * FROM ql_booking JOIN client ON client.id = ql_booking.id_client  JOIN products ON  products.id = ql_booking.id_products WHERE id_client = $clientId";
+    $sql = "SELECT * FROM ql_booking JOIN client ON client.id = ql_booking.id_client  JOIN products ON  products.id = ql_booking.id_products WHERE id_client = $clientId ORDER BY ql_booking.id DESC";
 
     return getData($sql, FETCH_ALL);
 }
-
 function getTravel()
 {
     $sql = "SELECT products.id,client.id AS id_cl,price,number,products.name,categories.name AS tendm,content,products.image,time_start,book_tour.id as tour_id,city.name as name_city FROM products
@@ -127,11 +159,103 @@ function createTour()
     $image = $_FILES['image'];
     $save = 'template_client/img/' . basename($image['name']);
     move_uploaded_file($image['tmp_name'], $save);
-    $category = isset($_POST['category_id']) ? $_POST['category_id'] : '';
+    $category = $_POST['category_id'];
+
+    $coach = $_POST['coach'];
+    $city = $_POST['city'];
+    $guide = $_POST['guide'];
+    $hotel = $_POST['hotel'];
+    $number = $_POST['number'];
+    $day = $_POST['day'];
+    $istrending = $_POST['istrending'];
+    $schedule = $_POST['schedule'];
+
+    $name_err = '';
+    $image_err = '';
+    $price_err = '';
+    $cate_err = '';
+    $times_err = '';
+    $timee_err = '';
+    $content_err = '';
+    $coach_err = '';
+    $city_err = '';
+    $guide_err = '';
+    $hotel_err = '';
+    $number_err = '';
+    $day_err = '';
+    $schedule_err = '';
+
+
+    if ($name == '') {
+        $name_err = 'Vui lòng không để trống!';
+    }
+    if ($price == '') {
+        $price_err = 'Vui lòng không để trống!';
+    }else if($price <=0){
+        $price_err = 'Vui lòng nhập giá lớn hơn 0!';
+    }
+    if ($time_start == '') {
+        $times_err = 'Vui lòng không để trống!';
+    }
+    if ($time_end == '') {
+        $timee_err = 'Vui lòng không để trống!';
+    }
+    if ($content == '') {
+        $content_err ='Vui lòng không để trống!';
+    }
+    if ($category == '') {
+        $cate_err = 'Vui lòng không để trống!';
+    }
+    if ($coach == '') {
+        $coach_err = 'Vui lòng không để trống!';
+    }
+    if ($city == '') {
+        $city_err = 'Vui lòng không để trống!';
+    }
+    if ($hotel == '') {
+        $hotel_err = 'Vui lòng không để trống!';
+    }
+    if ($guide == '') {
+        $guide_err ='Vui lòng không để trống!';
+    }
+    if ($number == '') {
+        $number_err = 'Vui lòng không để trống!';
+    }
+    else if($number <=0){
+        $number_err = 'Vui lòng nhập giá lớn hơn 0!';
+    }
+    if ($day == '') {
+        $day_err = 'Vui lòng không để trống!';
+    }
+    else if($day <=0){
+        $day_err = 'Vui lòng nhập giá lớn hơn 0!';
+    }
+    if ($schedule == '') {
+        $schedule_err = 'Vui lòng không để trống!';
+    }
+    if ($image['size'] <=0) {
+        $image_err = 'Vui lòng không để trống!';
+    }
+    if ($image['size'] >= 2 * 1024 * 1024) {
+        $image_err = 'Kích cỡ ảnh không được quá 2mb!';
+    }
+
+
+    if (!empty($name_err) || !empty($image_err) || !empty($price_err) || !empty($cate_err) || !empty($times_err) || !empty($timee_err) || !empty($content_err) || !empty($coach_err) || !empty($city_err) || !empty($hotel_err) || !empty($guide_err) || !empty($number_err)||!empty($day_err)||!empty($schedule_err)) {
+        header("location:index.php?url=qltour_index&name_err=$name_err&image_err=$image_err&price_err=$price_err&cate_err=$cate_err & times_err=$times_err&timee_err=$timee_err&content_err=$content_err&coach_err=$coach_err&city_err=$city_err&hotel_err=$hotel_err& guide_err=$guide_err&number_err=$number_err&day_err=$day_err&schedule_err=$schedule_err");
+        die;
+    }
     $sql = "INSERT INTO products  "
-        . "(name, price, time_start, time_end, content, image, category_id)"
-        . " VALUES ('$name', '$price', '$time_start', '$time_end', '$content', '$save', '$category')";
-    return getData($sql, NOT_FETCH);
+        . "(name, price, time_start, time_end, content, image, category_id,days,is_trending,schedule)"
+        . " VALUES ('$name', '$price', '$time_start', '$time_end', '$content', '$save',$category,$day,$istrending,'$schedule')";
+    $result = getData($sql, NOT_FETCH);
+    $sql2 = "SELECT id FROM products ORDER BY id DESC LIMIT 1";
+    $lastProducts = getData($sql2, FETCH_ONE);
+    $sql3 = "INSERT INTO detail (id_products,id_coach,id_city,id_hotel,id_tour_guide) VALUES ({$lastProducts['id']},$coach,$city,$hotel,$guide) ";
+    $saveDetail = getData($sql3, NOT_FETCH);
+    $sql4 = "INSERT INTO book_tour (id_tour,number) VALUES ({$lastProducts['id']},$number) ";
+    getData($sql4, NOT_FETCH);
+    return $result;
 }
 function getContact_client()
 {
@@ -194,4 +318,31 @@ function taoCommentProducts()
         . "(content,product_id,client_id,time)"
         . " VALUES ('$content', '$productId', '$clientId', '$date')";
     return getData($sql, NOT_FETCH);
+}
+function  updateTourNew()
+{
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $time_start = $_POST['time_start'];
+    $time_end = $_POST['time_end'];
+    $content = $_POST['content'];
+    $image = $_FILES['image'];
+    $save = 'template_client/img/' . basename($image['name']);
+    move_uploaded_file($image['tmp_name'], $save);
+    $category = $_POST['category_id'];
+
+    $coach = $_POST['coach'];
+    $city = $_POST['city'];
+    $guide = $_POST['guide'];
+    $hotel = $_POST['hotel'];
+    $number = $_POST['number'];
+
+    $sql = " UPDATE products SET name='$name',price='$price',time_start='$time_start',time_end='$time_end',content='$content',image='$save',category_id=$category where id=$id ";
+    $result = getData($sql, NOT_FETCH);
+    $sql3 = "UPDATE detail SET id_coach =$coach,id_city=$city,id_hotel=$hotel,id_tour_guide=$guide WHERE id_products=$id";
+    $updateDetail = getData($sql3, NOT_FETCH);
+    $sql4 = "UPDATE book_tour SET number='$number' WHERE id_tour = $id";
+    getData($sql4, NOT_FETCH);
+    return $result;
 }

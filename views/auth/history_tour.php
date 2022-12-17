@@ -123,11 +123,6 @@
                     <!-- Content Row -->
                     <div>
                         <h1>Số lượng vé</h1>
-
-                        <?php foreach ($update_number as $key => $value) : ?>
-                            <h2><?= $value['number_client'] ?></h2>
-                        <?php endforeach ?>
-
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
