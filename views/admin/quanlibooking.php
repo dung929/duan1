@@ -46,7 +46,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -173,7 +173,9 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']['name'] ?> </span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    <?= $_SESSION['user']['name'] ?>
+                                </span>
                                 <img class="template/img-profile rounded-circle" style="width: 50px;" src="<?= $_SESSION['user']['image'] ?>">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -242,15 +244,33 @@
                                 <?php foreach ($booking as $key => $value) : ?>
                                     <tr>
 
-                                        <td><?= $value['name_tour'] ?></td>
-                                        <td><?= $value['name_client'] ?></td>
-                                        <td><?= $value['number_client'] ?></td>
-                                        <td><?= $value['time_booktour'] ?></td>
-                                        <td><?= $value['coach_tour'] ?></td>
-                                        <td><?= $value['guide_tour'] ?></td>
-                                        <td><?= $value['hotel_tour'] ?></td>
-                                        <td><?= $value['category_name'] ?></td>
-                                        <td><?= $value['sum_tour'] ?>$</td>
+                                        <td>
+                                            <?= $value['name_tour'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['name_client'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['number_client'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['time_booktour'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['coach_tour'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['guide_tour'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['hotel_tour'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['category_name'] ?>
+                                        </td>
+                                        <td>
+                                            <?= $value['sum_tour'] ?>$
+                                        </td>
                                         <td>
                                             <?php
                                             if ($value['status'] == 'Chờ xác nhận') {
@@ -282,13 +302,15 @@
                                                 }
                                                 ?>
                                             </form>
-                                            <form action="index.php?url=deleteBooking" method="POST">
-                                                <input type="hidden" name="id_products" value="<?= $value['id_products'] ?>">
-                                                <input type="hidden" name="id" value="<?= $value['id'] ?>">
-                                               
-                                                <input type="hidden" name="number" value="<?= $value['number_client'] ?>">
-                                                <button onclick="return confirm('Bạn có muốn hủy không?')" class="btn btn-danger mt-2">Hủy</button>
-                                            </form>
+                                            <?php if (($value['status'] == 'Chờ xác nhận') || ($value['status'] == 'Đã xác nhận') || ($value['status'] == 'Đã thanh toán')) { ?>
+                                                <form action="index.php?url=deleteBooking" method="POST">
+                                                    <input type="hidden" name="id_products" value="<?= $value['id_products'] ?>">
+                                                    <input type="hidden" name="id" value="<?= $value['id'] ?>">
+
+                                                    <input type="hidden" name="number" value="<?= $value['number_client'] ?>">
+                                                    <button onclick="return confirm('Bạn có muốn hủy không?')" class="btn btn-danger mt-2">Hủy</button>
+                                                </form>
+                                            <?php } ?>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
@@ -329,7 +351,8 @@
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
-                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.
+                        </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                             <a class="btn btn-primary" href="login.html">Logout</a>
